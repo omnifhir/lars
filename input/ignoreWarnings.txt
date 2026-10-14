@@ -1,0 +1,31 @@
+== Suppressed Messages ==
+
+# 尚未指定 OID（CodeSystem / ValueSet），不影響驗證。
+% have an OID%
+
+# Validator 無法解析外部 Canonical URL，不影響驗證。（目前 0 uses，若之後仍無符合訊息可移除）
+% Canonical URL%
+% URL value%
+
+# IG Publisher 自動鎖定（pin）所參照的代碼系統版本，不影響驗證。
+% Pinned the version of %
+
+# TW Core 最新版本的代碼不齊全，無法直接繼承，故暫時沿用 tw.gov.mohw.twcore#0.3.2。
+% The ImplementationGuide uses package tw.gov.mohw.twcore#0.3.2%
+
+# 提醒 slice 的 discriminator type 'pattern' 寫法於 R5 已棄用，本 IG 為 R4，不影響本IG驗證。
+% The discriminator type 'pattern' is deprecated in R5%
+
+# 「多型擇一」設計：容器上限 1 為刻意限制，底下沿用父 profile 的多個 slice 僅供擇一，不影響本IG驗證。
+# 適用：Patient.identifier（身分證／護照／居留證等）、Observation.code.coding（月報僅允許健保批價碼）。
+% but the slices add up to a maximum of %
+
+# 繼承自 TW Core 的 profile 的 R5 擴充（elementdefinition-maxValueSet、regex）已被標示為 deprecated，非本 IG 會使用到之定義，不影響本IG驗證。
+%elementdefinition-maxValueSet|5.3.0 is deprecated%
+%StructureDefinition/regex|5.3.0 is deprecated%
+
+# 繼承自 TW Core Specimen：container.additive[x] 的 binding 僅對 CodeableConcept 有意義，對 Reference 型別無效，不影響本IG驗證。
+%The Binding on the type slicer Specimen.container.additive[x]%
+
+# LOINC 值集代碼數量（約 7.4 萬筆）超過 Validator 單次檢查上限，未逐筆檢查代碼，不影響驗證。
+%The value set include has too many concepts to validate%
