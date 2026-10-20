@@ -9,12 +9,16 @@
 - [每日通報個案檢驗疾病(Condition DailyReport LARS)](StructureDefinition-condition-lars-dailyReport.html)
 
 #### DiagnosticReport
+
+
 #### Encounter
 - [每日通報個案就醫資料(Encounter DailyReport LARS)](StructureDefinition-encounter-lars-dailyReport.html)
 
 #### MessageHeader
 
+
 #### Observation
+
 
 #### Organization
 - [醫事機構(Organization LARS)](StructureDefinition-organization-lars.html)
