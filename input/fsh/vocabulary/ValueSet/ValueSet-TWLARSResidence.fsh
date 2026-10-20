@@ -1,6 +1,6 @@
 ValueSet: TWLARSResidenceVS
 Id: twlars-residence-values
-Title: "CDC-LARS系統-鄉鎮市區值集(無法對應至臺灣中華郵政3碼郵遞區號)"
+Title: "中華郵政3碼 + CDC-LARS系統-鄉鎮市區值集"
 Description: "值集出版日期：2026-10-30；資料所屬單位：臺灣衛生福利部疾管署。"
 * ^version = "0.0.1"
 * ^experimental = false
