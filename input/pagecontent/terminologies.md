@@ -16,7 +16,7 @@
 ### 值集(Value Sets)
 - [Hl7 ActEncounterCode + CDC-LARS系統-就醫類型值集](ValueSet-hl7-twlars-encounter-type-values.html)
 - [CDC-LARS系統-就醫類型值集](ValueSet-twlars-encounter-type-values.html)
-- [中華郵政3碼 + CDC-LARS系統-鄉鎮市區值集(含無法對應之原始代碼)](ValueSet-twlars-residence-values.html)
+- [中華郵政3碼 + CDC-LARS系統-鄉鎮市區值集](ValueSet-twlars-residence-values.html)
 
 
 
