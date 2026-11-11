@@ -1,9 +1,7 @@
-CodeSystem: TWLARSSpecimenTypeCS
-Id: twlars-specimen-type-values
+CodeSystem: LARSSpecimenTypeCS
+Id: lars-specimen-type-values
 Title: "CDC-LARS系統-檢體種類"
-Description: "臺灣衛生福利部疾管署LARS系統「檢體種類」代碼，代碼出版日期：未提供；資料所屬單位：臺灣衛生福利部疾管署。
-
-*因原始資料未提供代碼版本及生效日期，故本資源版本依本實作指引版本管理。*"
+Description: "「CDC-LARS系統-檢體種類」代碼系統；資料所屬單位：衛生福利部疾病管制署。"
 
 * ^version = "0.0.1"
 * ^experimental = false

@@ -1,12 +1,12 @@
 {
-    "package-id" : "tw.gov.mohw.cdc.twlars",
+    "package-id" : "tw.gov.mohw.cdc.lars",
     "version" : "0.0.1",
-    "path" : "https://twlars.cdc.gov.tw/twlars/0.0.1",
+    "path" : "https://cdc.gov.tw/lars/0.0.1",
     "mode" : "milestone",
     "status" : "trial-use",
     "sequence" : "Releases",
     "first" : true,
-    "title" : "實驗室傳染病自動通報實作指引",
+    "title" : "旅遊醫學疫苗實驗室傳染病自動通報系統實作指引",
     "category" : "Public Health",
     "descmd" : "初版"
   }

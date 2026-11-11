@@ -1,5 +1,5 @@
 Logical: RlabDailyReportModel
-Id: labDailyReportModel
+Id: lab-daily-report-model
 Title: "實驗室資料自動通報之每日通報個案(labDailyReport)之資料模型"
 Description: "實驗室資料自動通報之每日通報個案(labDailyReport)之資料模型"
 * ^version = "0.1.0"
@@ -167,14 +167,14 @@ Mapping: LARSDailyReportOrganization
 Id: LARSDailyReportOrganization
 Title: "Mapping to LARS Organization"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/organization-lars"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/organization-lars"
 * hospital -> "Organization.identifier"
 
 Mapping: LARSDailyReportPatient
 Id: LARSDailyReportPatient
 Title: "Mapping to LARS Patient"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/patient-lars"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/patient-lars-daily-report"
 * anamnesis -> "Patient.identifier:medicalRecord"
 * name -> "Patient.name:usual.text"
 * idno -> "Patient.identifier:idCardNumber"
@@ -192,7 +192,7 @@ Mapping: LARSDailyReportEncounter
 Id: LARSDailyReportEncounter
 Title: "Mapping to LARS Encounter"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/encounter-lars-dailyReport"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/encounter-lars-daily-report"
 * diagnoseDay -> "Encounter.period.start"
 * medicalType -> "Encounter.class"
 
@@ -200,7 +200,7 @@ Mapping: LARSDailyReportCondition
 Id: LARSDailyReportCondition
 Title: "Mapping to LARS Condition"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/condition-lars-dailyReport"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/condition-lars-daily-report"
 * diagnoseCode1 -> "Condition.code"
 * diagnoseCode2 -> "Condition.code"
 * diagnoseCode3 -> "Condition.code"
@@ -212,7 +212,7 @@ Mapping: LARSDailyReportDiagnosticReport
 Id: LARSDailyReportDiagnosticReport
 Title: "Mapping to LARS DiagnosticReport"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/diagnosticreport-lars-dailyReport"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/diagnosticreport-lars-daily-report"
 * inspectionCreatetime -> "DiagnosticReport.effectiveDateTime"
 * hospital -> "DiagnosticReport.performer"
 * idno -> "DiagnosticReport.subject"
@@ -223,10 +223,10 @@ Mapping: LARSDailyReportObservation
 Id: LARSDailyReportObservation
 Title: "Mapping to LARS Observation"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/observation-lars-dailyReport"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/observation-lars-daily-report"
 * inspectionSno -> "Observation.identifier"
 * inspectionItem -> "Observation.code"
-* nhiCode -> "Observation.component:TWLARSMedicalServicePayment.code"
+* nhiCode -> "Observation.component:TWLaboratoryCategory.code"
 * inspectionMethod -> "Observation.method"
 * units -> "Observation.valueQuantity.unit"
 * inspectionReporttime -> "Observation.effectiveDateTime"
@@ -245,7 +245,7 @@ Mapping: LARSDailyReportSpecimen
 Id: LARSDailyReportSpecimen
 Title: "Mapping to LARS Specimen"
 Source: RlabDailyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/specimen-lars"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/specimen-lars-daily-report"
 * sampleReceivetime -> "Specimen.receivedTime"
 * sampleType -> "Specimen.type"
 

@@ -1,5 +1,5 @@
 Logical: RlabMonthlyReportModel
-Id: labMonthlyReportModel
+Id: lab-monthly-report-model
 Title: "實驗室資料自動通報之每日總收件數(labMonthlyReport)之資料模型"
 Description: "實驗室資料自動通報之每日總收件數(labMonthlyReport)之資料模型"
 * ^version = "0.1.0"
@@ -25,20 +25,12 @@ Description: "實驗室資料自動通報之每日總收件數(labMonthlyReport)
 
 // -----------------------------Mapping-----------------------------
 
-Mapping: LARSMonthlyReportDiagnosticReport
-Id: LARSMonthlyReportDiagnosticReport
-Title: "Mapping to LARS DiagnosticReport"
-Source: RlabMonthlyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/diagnosticreport-lars-monthlyReport"
-* hospital -> "DiagnosticReport.performer"
-* nhiCode -> "DiagnosticReport.result"
-
 Mapping: LARSMonthlyReportObservation
 Id: LARSMonthlyReportObservation
 Title: "Mapping to LARS Observation"
 Source: RlabMonthlyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/observation-lars-monthlyReport"
-* nhiCode -> "Observation.code"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/observation-lars-monthly-report"
+* nhiCode -> "Observation.code.coding:TWLaboratoryCategory"
 * inspectionNum -> "Observation.valueInteger"
 * sampleType -> "Observation.specimen"
 
@@ -47,14 +39,14 @@ Mapping: LARSMonthlyReportOrganization
 Id: LARSMonthlyReportOrganization
 Title: "Mapping to LARS Organization"
 Source: RlabMonthlyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/organization-lars"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/organization-lars"
 * hospital -> "Organization.identifier"
 
 Mapping: LARSMonthlyReportSpecimen
 Id: LARSMonthlyReportSpecimen
 Title: "Mapping to LARS Specimen"
 Source: RlabMonthlyReportModel
-Target: "https://twlars.cdc.gov.tw/twlars/StructureDefinition/specimen-lars"
+Target: "https://cdc.gov.tw/lars/StructureDefinition/specimen-lars-monthly-report"
 * sampleType -> "Specimen.type"
 * sampleReceivetime -> "Specimen.receivedTime"
 

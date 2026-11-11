@@ -1,11 +1,8 @@
-CodeSystem: TWLARSTownCS
-Id: twlars-town-values
+CodeSystem: LARSTownCS
+Id: lars-town-values
 Title: "CDC-LARS系統-鄉鎮市區"
-Description: "臺灣衛生福利部疾管署LARS系統「鄉鎮市區」代碼，代碼出版日期：未提供；資料所屬單位：臺灣衛生福利部疾管署。
+Description: "「CDC-LARS系統-鄉鎮市區」代碼系統；資料所屬單位：衛生福利部疾病管制署。"
 
-*因原始資料未提供代碼版本及生效日期，故本資源版本依本實作指引版本管理。*"
-
-* ^name = "TWLARSTown"
 * ^version = "0.0.1"
 * ^experimental = false
 * ^caseSensitive = true

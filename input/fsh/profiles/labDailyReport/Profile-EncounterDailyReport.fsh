@@ -1,6 +1,6 @@
 Profile: EncounterDailyReport
 Parent: TWCoreEncounter
-Id: encounter-lars-dailyReport
+Id: encounter-lars-daily-report
 Title: "每日通報個案就醫資料(Encounter DailyReport LARS)"
 Description: "此每日通報個案就醫資料(Encounter DailyReport LARS)Profile說明本IG如何進一步定義臺灣核心-就醫事件(TW Core Encounter) Profile，以呈現實驗室傳染病每日通報個案之就醫資料。"
 * ^version = "0.0.1"

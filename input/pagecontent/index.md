@@ -1,7 +1,7 @@
 
 ### 專案介紹
 <div  style="padding-left: 10px;"> 
-<p>實驗室傳染病自動通報實作指引(twlars IG)採用HL7® FHIR® standard(Fast Healthcare Interoperability Resources)IG建置方法，在<a href="http://hl7.org/fhir/R4/">FHIR R4.0.1</a>之標準基礎上，繼承TW Core IG V 0.3.2 (2024-12-12)，進一步定義適用於「實驗室傳染病自動通報實作指引(以下簡稱本專案)」資料需求的Resources(類似資料表)、其中的資料項目(意即欄位)、基數(意即0..1、0..*、1..1或1..*)及資料類型(文字、日期時間、代碼等)等。</p>
+<p>實驗室傳染病自動通報系統實作指引(Laboratory Automated Reporting System Implementation Guide，LARS IG)採用HL7® FHIR® standard(Fast Healthcare Interoperability Resources)IG建置方法，在<a href="http://hl7.org/fhir/R4/">FHIR R4.0.1</a>之標準基礎上，繼承TW Core IG V 0.3.2 (2024-12-12)，進一步定義適用於「實驗室傳染病自動通報系統實作指引(以下簡稱本專案)」資料需求的Resources(類似資料表)、其中的資料項目(意即欄位)、基數(意即0..1、0..*、1..1或1..*)及資料類型(文字、日期時間、代碼等)等。</p>
 </div>
 
 ### 專案背景
@@ -50,7 +50,7 @@
 	<li><strong><a href="examples.html">範例</a></strong>：本IG所定義Profiles之範例檔。</li>
 	<li><strong><a href="downloads.html">定義與範例檔下載</a></strong>：實作者若不偏好使用FHIR RESTful API驗證資料是否符合Profiles，可直接下載所需的格式驗證檔，包括XML、JSON及Turtle三種格式，亦可於此下載完整範例檔。</li>
 	<li><strong><a href="security.html">安全性</a></strong>：主要說明採用本IG網站進行實作時，有關資料存取授權的作法。</li>
-	<li><strong><a href="https://twlars.cdc.gov.tw/twlars/history.html">版本異動</a></strong>：若本IG網站的版本有所異動，皆可透過<a href="https://twlars.cdc.gov.tw/twlars/history.html">異動說明頁</a>得以瞭解版本間的異動差異。</li>
+	<li><strong><a href="https://cdc.gov.tw/lars/history.html">版本異動</a></strong>：若本IG網站的版本有所異動，皆可透過<a href="https://cdc.gov.tw/lars/history.html">異動說明頁</a>得以瞭解版本間的異動差異。</li>
 </ul>
 </div>
 

@@ -3,13 +3,13 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: tw.gov.mohw.cdc.twlars
-canonical: https://twlars.cdc.gov.tw/twlars
-name: TWLARS
-title: "實驗室傳染病自動通報實作指引"
-description: 實驗室傳染病自動通報實作指引
+id: tw.gov.mohw.cdc.lars
+canonical: https://cdc.gov.tw/lars
+name: LARS
+title: "實驗室傳染病自動通報系統實作指引"
+description: 實驗室傳染病自動通報系統實作指引
 status: active # draft | active | retired | unknown
-version: 0.0.1
+version: 1.0.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -58,7 +58,7 @@ pages:
     title: 安全性
   examples.md:
     title: 範例
-  ImplementationGuide-tw.gov.mohw.cdc.twlars.md:
+  ImplementationGuide-tw.gov.mohw.cdc.lars.md:
     title: LARS ImplementationGuide Resource
   vision.md:
     title: 視覺化邏輯模型

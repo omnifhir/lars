@@ -22,7 +22,9 @@
 
 # 繼承自 TW Core 的 profile 的 R5 擴充（elementdefinition-maxValueSet、regex）已被標示為 deprecated，非本 IG 會使用到之定義，不影響本IG驗證。
 %elementdefinition-maxValueSet|5.3.0 is deprecated%
+%elementdefinition-maxValueSet|5.4.0 is deprecated%
 %StructureDefinition/regex|5.3.0 is deprecated%
+%StructureDefinition/regex|5.4.0 is deprecated%
 
 # 繼承自 TW Core Specimen：container.additive[x] 的 binding 僅對 CodeableConcept 有意義，對 Reference 型別無效，不影響本IG驗證。
 %The Binding on the type slicer Specimen.container.additive[x]%

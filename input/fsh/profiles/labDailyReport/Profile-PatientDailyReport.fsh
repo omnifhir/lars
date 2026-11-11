@@ -1,8 +1,8 @@
-Profile: PatientLARS
+Profile: PatientDailyReport
 Parent: TWCorePatient
-Id: patient-lars
-Title: "個案資料(Patient LARS)"
-Description: "此個案資料(Patient LARS)Profile 說明本IG如何進一步定義臺灣核心-病患(TW Core Patient) Profile以呈現實驗室傳染病自動通報之個案基本資料。"
+Id: patient-lars-daily-report
+Title: "每日通報個案基本資料(Patient DailyReport LARS)"
+Description: "此每日通報個案基本資料(Patient DailyReport LARS)Profile 說明本IG如何進一步定義臺灣核心-病患(TW Core Patient) Profile以呈現實驗室傳染病自動通報之個案基本資料。"
 * ^version = "0.0.1"
 
 * name 1..1
@@ -18,16 +18,17 @@ Description: "此個案資料(Patient LARS)Profile 說明本IG如何進一步定
 
 * birthDate ^short = "出生年，格式為 YYYY。"
 
-* identifier 1..1
+* identifier 2..2
+* identifier ^short = "請填入「院內病歷號」以及「IDNO」。若已有檢驗結果，但尚未取得證號者，IDNO欄位先輸入特定暫用格式，取得證號後再更新該筆資料。"
 * identifier ^slicing.rules = #closed
 * identifier contains
 	temp 0..1 MS
 * identifier[temp].type.coding.code = #PNT
 * identifier[temp].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
-* identifier[temp] ^short = "倘無法取得其餘3種證號時，請依下列規定填入「AA、BB或CC」。(1) 本國新生兒(報告日期-出生日期 < 6個月)，請填入「AA」。 (2) 本國人士請填入「BB」。 (3) 外國人士請填入「CC」。"
+* identifier[temp] ^short = "已有檢驗結果，但尚未取得證號者，請使用此暫用格式。請依下列規定填入。(1) 本國人「小於」6個月者請填入「AA+民國年月日+當天的流水碼(2碼)」。 (2)本國人「大於」6個月者請填入「BB+民國年月日+當天的流水碼(2碼)」。 (3)外國人請填入「CC+民國年月日+當天的流水碼(2碼)」"
 
 * identifier[residentNumber] obeys resident-number
-
+* . obeys patient-gender-match
 
 * telecom 1..*
 * telecom.system = #phone
@@ -54,10 +55,15 @@ Description: "此個案資料(Patient LARS)Profile 說明本IG如何進一步定
 * address 1..1 MS
 * address.city 1..1 MS
 * address ^short = "通訊地縣市鄉鎮代碼；若無則為戶籍地。"
-* address.city from TWLARSResidenceVS (required)
+* address.city from LARSResidenceVS (required)
 
 
 Invariant: resident-number
 Description: "居留證號格式為：「1碼英文+9碼數字」或「2碼英文+8碼數字」。"
 Expression: "value.matches('^([A-Za-z][0-9]{9}|[A-Za-z]{2}[0-9]{8})$')"
 Severity: #error
+
+Invariant: patient-gender-match
+Description: "gender依據identifier:idCardNumber第二位字符檢核男性與女性代碼 (1=male, 2=female)"
+Expression: "identifier.where(system = 'http://www.moi.gov.tw').value.exists() implies (identifier.where(system = 'http://www.moi.gov.tw').value.substring(1, 1) = '1' implies gender = 'male') and (identifier.where(system = 'http://www.moi.gov.tw').value.substring(1, 1) = '2' implies gender = 'female')"
+Severity: #warning
