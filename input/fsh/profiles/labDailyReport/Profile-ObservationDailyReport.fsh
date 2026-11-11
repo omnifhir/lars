@@ -75,31 +75,24 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 * component ^slicing.rules = #open
 * component contains
 
-    LARSnhipayment 0..1 MS and
+    LARSnhipayment 1..1 MS and
     DrugResistanceResult 0..1 MS
 
-* component[LARSnhipayment] ^short = "健保批價碼"
-* component[LARSnhipayment].code obeys nhi-or-no-nhi-code
-* component[LARSnhipayment].code ^short = "健保批價碼與無健保批價碼兩者需擇一填寫。"
+* component[LARSnhipayment] ^short = "健保批價碼或無健保批價碼"
+* component[LARSnhipayment].code from LARSNHICodeVS (required)
 * component[LARSnhipayment].code.coding[LOINCObservationCode] 0..0
-
-
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] 0..1 MS
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] ^short = "健保批價碼"
-
-* component[LARSnhipayment].code.coding contains
-    LARSNoNHICode 0..1 MS
-* component[LARSnhipayment].code.coding[LARSNoNHICode] ^short = "無健保批價碼，888888:SARS-CoV-2無健保批價碼或自費 | 999999:除SARS-CoV-2之其他病原體無健保批價碼或自費"
-* component[LARSnhipayment].code.coding[LARSNoNHICode].system 1..1
-* component[LARSnhipayment].code.coding[LARSNoNHICode].system = Canonical(LARSCodeCS)
-* component[LARSnhipayment].code.coding[LARSNoNHICode].code 1..1
-* component[LARSnhipayment].code.coding[LARSNoNHICode] from LARSNoNHICodeVS (required)
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] 0..0
 
 * component[DrugResistanceResult] ^short = "抗藥性檢測結果"
 * component[DrugResistanceResult].code = LARSFHIRNeedCodeCS#抗藥性檢測結果 "抗藥性檢測結果"
 * component[DrugResistanceResult].value[x] 1..1 MS
 * component[DrugResistanceResult].value[x] only string
 * component[DrugResistanceResult].valueString ^short = "抗藥性的檢測結果值"
+* component[DrugResistanceResult].code.coding[LOINCObservationCode] 0..0
+* component[DrugResistanceResult].code.coding[TWLaboratoryCategory] 0..0
+
+
+
 
 
 * extension contains LOINCInfo named loinc 1..1 MS

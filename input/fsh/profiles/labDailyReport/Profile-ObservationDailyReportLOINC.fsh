@@ -13,10 +13,7 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 * code.coding[TWLaboratoryCategory] 0..0
 * code.coding[LOINCObservationCode] ^short = "LOINC Code"
 * code.coding[LOINCObservationCode] 1..
-//若LOINC範圍有不同，就需要在設定以下這部分
-//* code.coding[LARSLOINCObservationCode] ^short = "檢驗項目名稱"
-//* code.coding[LARSLOINCObservationCode] 1..
-//* code.coding[LARSLOINCObservationCode] from 
+
 
 * subject only Reference(PatientDailyReport)
 
@@ -60,25 +57,17 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
     LARSnhipayment 0..1 MS and
     DrugResistanceResult 0..1 MS
 
-* component[LARSnhipayment] ^short = "健保批價碼"
-* component[LARSnhipayment].code obeys nhi-or-no-nhi-code
-* component[LARSnhipayment].code ^short = "健保批價碼與無健保批價碼兩者需擇一填寫。"
+* component[LARSnhipayment] ^short = "健保批價碼或無健保批價碼"
+* component[LARSnhipayment].code from LARSNHICodeVS (required)
 * component[LARSnhipayment].code.coding[LOINCObservationCode] 0..0
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] 0..0
 
-
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] 0..1 MS
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] ^short = "健保批價碼"
-
-* component[LARSnhipayment].code.coding contains
-    LARSNoNHICode 0..1 MS
-* component[LARSnhipayment].code.coding[LARSNoNHICode] ^short = "無健保批價碼，888888:SARS-CoV-2無健保批價碼或自費 | 999999:除SARS-CoV-2之其他病原體無健保批價碼或自費"
-* component[LARSnhipayment].code.coding[LARSNoNHICode].system 1..1
-* component[LARSnhipayment].code.coding[LARSNoNHICode].system = Canonical(LARSCodeCS)
-* component[LARSnhipayment].code.coding[LARSNoNHICode].code 1..1
-* component[LARSnhipayment].code.coding[LARSNoNHICode] from LARSNoNHICodeVS (required)
 
 * component[DrugResistanceResult] ^short = "抗藥性檢測結果"
 * component[DrugResistanceResult].code = LARSFHIRNeedCodeCS#抗藥性檢測結果 "抗藥性檢測結果"
 * component[DrugResistanceResult].value[x] 1..1 MS
 * component[DrugResistanceResult].value[x] only string
 * component[DrugResistanceResult].valueString ^short = "抗藥性的檢測結果值"
+* component[DrugResistanceResult].code.coding[LOINCObservationCode] 0..0
+* component[DrugResistanceResult].code.coding[TWLaboratoryCategory] 0..0
+

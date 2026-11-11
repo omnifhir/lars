@@ -482,7 +482,7 @@ Usage: #example
 * referenceRange.text = "<1:80"
 * note.text = "##01"
 * specimen = Reference(specimen-lars-example)
-* component[LARSnhipayment].code.coding[LARSNoNHICode] = LARSCodeCS#999999 "除SARS-CoV-2之其他病原體無健保批價碼或自費"
+* component[LARSnhipayment].code.coding[0] = LARSCodeCS#999999 "除SARS-CoV-2之其他病原體無健保批價碼或自費"
 
 Instance: messageheader-lars-daily-report-example
 InstanceOf: MessageHeaderDailyReport

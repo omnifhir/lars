@@ -23,7 +23,7 @@
 - [CDC-LARS系統-LOINC檢驗單位屬性(Scale)值集](ValueSet-lars-loinc-scale-values.html)
 - [CDC-LARS系統-LOINC代碼表值集](ValueSet-lars-loinc-values.html)
 - [CDC-LARS系統-無適用LOINC代碼值集](ValueSet-lars-no-loinc-code-values.html)
-- [臺灣健保署醫療服務給付項目-檢驗 + CDC-LARS系統-無健保批價碼值集](ValueSet-lars-no-nhi-code-values.html)
+- [臺灣健保署醫療服務給付項目 + CDC-LARS系統-無健保批價碼值集](ValueSet-lars-nhi-code-values.html)
 - [臺灣中華郵政3碼郵遞區號 + CDC-LARS系統-鄉鎮市區](ValueSet-lars-residence-values.html)
 - [CDC-LARS系統-檢體種類值集](ValueSet-lars-specimen-type-values.html)
 - [CDC-LARS系統-鄉鎮市區值集](ValueSet-lars-town-values.html)
