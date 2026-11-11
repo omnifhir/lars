@@ -1,5 +1,5 @@
 Logical: RlabMonthlyReportModel
-Id: lab-monthly-report-model
+Id: LabMonthlyReportModel
 Title: "實驗室資料自動通報之每日總收件數(labMonthlyReport)之資料模型"
 Description: "實驗室資料自動通報之每日總收件數(labMonthlyReport)之資料模型"
 * ^version = "0.1.0"

@@ -1,6 +1,6 @@
 ### 實驗室資料自動通報之每日總收件數 Bundle 架構（Bundle Request）
 <div  style="padding-left: 10px;"> 
-實驗室資料自動通報系統之「每日總收件數資料」透過Bundle打包以下資料(相關對應表可以參照實驗室資料自動通報之每日總收件數(Request)之邏輯模型中的<a href="StructureDefinition-lab-monthly-report-model-mappings.html">Mappings</a>)：
+實驗室資料自動通報系統之「每日總收件數資料」透過Bundle打包以下資料(相關對應表可以參照實驗室資料自動通報之每日總收件數(Request)之邏輯模型中的<a href="StructureDefinition-LabMonthlyReportModel-mappings.html">Mappings</a>)：
 <ul>
   <li>檢驗通報訊息－<a href="StructureDefinition-messageheader-lars-monthly-report.html">MessageHeader MonthlyReport LARS Profile</a></li>
   <li>檢驗結果－<a href="StructureDefinition-observation-lars-monthly-report.html">Observation MonthlyReport LARS Profile</a></li>

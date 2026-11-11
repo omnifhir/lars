@@ -1,5 +1,5 @@
 Logical: RlabDailyReportModel
-Id: lab-daily-report-model
+Id: LabDailyReportModel
 Title: "實驗室資料自動通報之每日通報個案(labDailyReport)之資料模型"
 Description: "實驗室資料自動通報之每日通報個案(labDailyReport)之資料模型"
 * ^version = "0.1.0"

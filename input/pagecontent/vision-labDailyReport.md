@@ -1,6 +1,6 @@
 ### 實驗室資料自動通報之每日個案資料 Bundle 架構（Bundle Request）
 <div  style="padding-left: 10px;"> 
-實驗室資料自動通報系統之「每日通報個案資料」透過Bundle打包以下資料(相關對應表可以參照實驗室資料自動通報每日個案資料(Request)之邏輯模型中的<a href="StructureDefinition-lab-daily-report-model-mappings.html">Mappings</a>)：
+實驗室資料自動通報系統之「每日通報個案資料」透過Bundle打包以下資料(相關對應表可以參照實驗室資料自動通報每日個案資料(Request)之邏輯模型中的<a href="StructureDefinition-LabDailyReportModel-mappings.html">Mappings</a>)：
 <ul>
   <li>檢驗通報訊息－<a href="StructureDefinition-messageheader-lars-daily-report.html">MessageHeader DailyReport LARS Profile</a></li>
   <li>診斷資訊－<a href="StructureDefinition-condition-lars-daily-report.html">Condition DailyReport LARS Profile</a></li>
