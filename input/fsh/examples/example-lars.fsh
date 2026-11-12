@@ -23,6 +23,7 @@ Usage: #example
 * identifier.use = #official
 * identifier.type.coding.system = $v2-0203
 * identifier.type.coding.code = #PRN
+* identifier.type.coding.display = "Provider number"
 * identifier.system = "https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/organization-identifier-tw"
 * identifier.value = "1101100011"
 
@@ -73,11 +74,13 @@ Usage: #example
 * identifier[idCardNumber].use = #official
 * identifier[idCardNumber].type.coding.system = $v2-0203
 * identifier[idCardNumber].type.coding.code = #NNxxx
+* identifier[idCardNumber].type.coding.display = "National Person Identifier where the xxx is the ISO table 3166 3-character (alphabetic) country code"
 * identifier[idCardNumber].system = "http://www.moi.gov.tw"
 * identifier[idCardNumber].value = "A123456789"
 * identifier[medicalRecord].use = #official
 * identifier[medicalRecord].type.coding.system = $v2-0203
 * identifier[medicalRecord].type.coding.code = #MR
+* identifier[medicalRecord].type.coding.display = "Medical record number"
 * identifier[medicalRecord].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[medicalRecord].value = "88001555"
 * name[usual].use = #usual
@@ -118,7 +121,7 @@ Usage: #example
 	</p>
 </div>"
 * status = #finished
-* class = $ActCode#AMB
+* class = $ActCode#AMB "ambulatory"
 * subject = Reference(patient-lars-example)
 * period.start = "2018-01-23T15:15:00+08:00"
 
@@ -268,8 +271,8 @@ Usage: #example
 * code.coding[icd10-cm-2023] = $ICD10CM2023#A02.9 "沙門桿菌感染"
 
 RuleSet: ConditionDailyReportExampleRule
-* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
-* category = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"
+* category = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis "Encounter Diagnosis"
 * subject = Reference(patient-lars-example)
 * encounter = Reference(encounter-lars-daily-report-example)
 * evidence.detail = Reference(diagnosticreport-lars-daily-report-case4)
@@ -335,7 +338,7 @@ Usage: #example
 	</p>
 </div>"
 * status = #final
-* code = http://loinc.org#11502-2
+* code = http://loinc.org#11502-2 "Laboratory report"
 * subject = Reference(patient-lars-example)
 * encounter = Reference(encounter-lars-daily-report-example)
 * effectiveDateTime = "2018-02-01T11:00:00+08:00"
@@ -401,7 +404,7 @@ Usage: #example
 * referenceRange.text = "無參考值"
 * note.text = "無備註"
 * specimen = Reference(specimen-lars-example)
-* component[LARSnhipayment].code.coding[0] = $NHIPayment#06013C
+* component[LARSnhipayment].code.coding[0] = $NHIPayment#06013C "尿生化檢查(包括蛋白、糖、尿膽元、膽紅素、比重、顏色、混濁度、酸鹼度、白血球酯脢及酮體)"
 
 
 Instance: observation-lars-daily-report-example

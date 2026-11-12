@@ -21,6 +21,7 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 * code.coding[LARSLOINCObservationCode] from LARSNoLOINCCodeVS (required)
 * code.coding[LARSLOINCObservationCode].system = "https://cdc.gov.tw/lars/CodeSystem/lars-code-values"
 * code.coding[LARSLOINCObservationCode].code = #99999
+* code.coding[LARSLOINCObservationCode].display = "無LOINC code可對應使用"
 
 * subject only Reference(PatientDailyReport)
 
@@ -70,26 +71,30 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 * specimen ^short = "LOINC檢體種類，即LOINC System；若無法填寫請填入 T999:XXX (To be specified in another part of the message)。"
 * specimen only Reference(SpecimenDailyReport)
 
+
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
+* component ^slicing.rules = #closed
 * component contains
-
     LARSnhipayment 1..1 MS and
     DrugResistanceResult 0..1 MS
 
 * component[LARSnhipayment] ^short = "健保批價碼或無健保批價碼"
 * component[LARSnhipayment].code from LARSNHICodeVS (required)
-* component[LARSnhipayment].code.coding[LOINCObservationCode] 0..0
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] 0..0
+* component[LARSnhipayment].code.coding contains LARSNoNHICode 0..1 MS
+* component[LARSnhipayment].code.coding[LARSNoNHICode] ^short = "無健保批價碼或自費"
+* component[LARSnhipayment].code.coding[LARSNoNHICode].system = "https://cdc.gov.tw/lars/CodeSystem/lars-code-values"
+
 
 * component[DrugResistanceResult] ^short = "抗藥性檢測結果"
 * component[DrugResistanceResult].code = LARSFHIRNeedCodeCS#抗藥性檢測結果 "抗藥性檢測結果"
 * component[DrugResistanceResult].value[x] 1..1 MS
 * component[DrugResistanceResult].value[x] only string
+* component[DrugResistanceResult].valueString 1..1 MS
 * component[DrugResistanceResult].valueString ^short = "抗藥性的檢測結果值"
 * component[DrugResistanceResult].code.coding[LOINCObservationCode] 0..0
 * component[DrugResistanceResult].code.coding[TWLaboratoryCategory] 0..0
+
 
 
 

@@ -31,3 +31,17 @@
 
 # LOINC 值集代碼數量（約 7.4 萬筆）超過 Validator 單次檢查上限，未逐筆檢查代碼，不影響驗證。
 %The value set include has too many concepts to validate%
+
+# Observation 未提供 performer：依本 IG 決策忽略此最佳實務建議。
+%Best Practice Recommendation: In general, all observations should have a performer%
+
+# 術語伺服器未提供 zh-TW 名稱，但已確認以下 display 為有效的預設語言名稱，保留官方英文。
+# 僅忽略下列代碼與 display 的翻譯缺漏提示；其他 display 錯誤仍須驗證。
+There are no valid display names found for the code http://loinc.org#11502-2 for language(s) 'zh-TW'. The display is 'Laboratory report' which is a valid display for the default language%
+There are no valid display names found for the code http://loinc.org#595-9 for language(s) 'zh-TW'. The display is 'Bacteria identified in Abscess by Aerobe culture' which is a valid display for the default language%
+There are no valid display names found for the code http://loinc.org#600-7 for language(s) 'zh-TW'. The display is 'Bacteria identified in Blood by Culture' which is a valid display for the default language%
+There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB for language(s) 'zh-TW'. The display is 'ambulatory' which is a valid display for the default language%
+There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ActCode#EMER for language(s) 'zh-TW'. The display is 'emergency' which is a valid display for the default language%
+There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ActCode#NONAC for language(s) 'zh-TW'. The display is 'inpatient non-acute' which is a valid display for the default language%
+There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#NEG for language(s) 'zh-TW'. The display is 'Negative' which is a valid display for the default language%
+There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS for language(s) 'zh-TW'. The display is 'Positive' which is a valid display for the default language%

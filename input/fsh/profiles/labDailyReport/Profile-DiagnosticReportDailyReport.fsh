@@ -8,7 +8,7 @@ Description: "此每日通報個案檢驗報告(DiagnosticReport DailyReport LAR
 * status = #final
 * status ^short = "【此欄位為FHIR必填欄位】" 
 
-* code = http://loinc.org#11502-2
+* code = http://loinc.org#11502-2 "Laboratory report"
 
 * subject only Reference(PatientDailyReport)
 * subject ^short = "個案資料"

@@ -51,23 +51,26 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
+* component ^slicing.rules = #closed
 * component contains
 
-    LARSnhipayment 0..1 MS and
+    LARSnhipayment 1..1 MS and
     DrugResistanceResult 0..1 MS
 
 * component[LARSnhipayment] ^short = "健保批價碼或無健保批價碼"
 * component[LARSnhipayment].code from LARSNHICodeVS (required)
-* component[LARSnhipayment].code.coding[LOINCObservationCode] 0..0
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] 0..0
-
+* component[LARSnhipayment].code.coding 1..1
+* component[LARSnhipayment].code.coding.system 1..1
+* component[LARSnhipayment].code.coding.code 1..1
+* component[LARSnhipayment].code.coding contains LARSNoNHICode 0..1 MS
+* component[LARSnhipayment].code.coding[LARSNoNHICode] ^short = "無健保批價碼或自費"
+* component[LARSnhipayment].code.coding[LARSNoNHICode].system = "https://cdc.gov.tw/lars/CodeSystem/lars-code-values"
 
 * component[DrugResistanceResult] ^short = "抗藥性檢測結果"
 * component[DrugResistanceResult].code = LARSFHIRNeedCodeCS#抗藥性檢測結果 "抗藥性檢測結果"
 * component[DrugResistanceResult].value[x] 1..1 MS
 * component[DrugResistanceResult].value[x] only string
+* component[DrugResistanceResult].valueString 1..1 MS
 * component[DrugResistanceResult].valueString ^short = "抗藥性的檢測結果值"
 * component[DrugResistanceResult].code.coding[LOINCObservationCode] 0..0
 * component[DrugResistanceResult].code.coding[TWLaboratoryCategory] 0..0
-

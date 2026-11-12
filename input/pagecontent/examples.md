@@ -2,6 +2,120 @@
 
 ### 每日通報個案（LabDailyReport）
 
+#### 個案一
+
+##### Bundle
+
+- [實驗室傳染病每日通報個案上傳-案例一](Bundle-bundle-lars-case1.html)
+
+##### MessageHeader
+
+- [每日通報個案通報訊息-案例一](MessageHeader-messageheader-lars-case1.html)
+
+##### Organization
+
+- [醫事機構-案例一](Organization-organization-lars-case1.html)
+
+##### Patient
+
+- [個案資料-案例一](Patient-patient-lars-case1.html)
+
+##### Encounter
+
+- [就醫資料-案例一](Encounter-encounter-lars-case1.html)
+
+##### Condition
+
+- [檢驗疾病-案例一](Condition-condition-lars-case1.html)
+
+##### DiagnosticReport
+
+- [檢驗報告-案例一](DiagnosticReport-diagnosticreport-lars-case1.html)
+
+##### Observation
+
+- [檢驗檢查-案例一](Observation-observation-lars-case1-loinc.html)
+
+##### Specimen
+
+- [檢驗檢體-案例一](Specimen-specimen-lars-case1.html)
+
+#### 個案二
+
+##### Bundle
+
+- [實驗室傳染病每日通報個案上傳-案例二](Bundle-bundle-lars-case2.html)
+
+##### MessageHeader
+
+- [每日通報個案通報訊息-案例二](MessageHeader-messageheader-lars-case2.html)
+
+##### Organization
+
+- [醫事機構-案例二](Organization-organization-lars-case2.html)
+
+##### Patient
+
+- [個案資料-案例二](Patient-patient-lars-case2.html)
+
+##### Encounter
+
+- [就醫資料-案例二](Encounter-encounter-lars-case2.html)
+
+##### Condition
+
+- [檢驗疾病-案例二](Condition-condition-lars-case2.html)
+
+##### DiagnosticReport
+
+- [檢驗報告-案例二](DiagnosticReport-diagnosticreport-lars-case2.html)
+
+##### Observation
+
+- [檢驗檢查-案例二](Observation-observation-lars-case2.html)
+
+##### Specimen
+
+- [檢驗檢體-案例二](Specimen-specimen-lars-case2.html)
+
+#### 個案三
+
+##### Bundle
+
+- [實驗室傳染病每日通報個案上傳-案例三](Bundle-bundle-lars-case3.html)
+
+##### MessageHeader
+
+- [每日通報個案通報訊息-案例三](MessageHeader-messageheader-lars-case3.html)
+
+##### Organization
+
+- [醫事機構-案例三](Organization-organization-lars-case3.html)
+
+##### Patient
+
+- [個案資料-案例三](Patient-patient-lars-case3.html)
+
+##### Encounter
+
+- [就醫資料-案例三](Encounter-encounter-lars-case3.html)
+
+##### Condition
+
+- [檢驗疾病-案例三](Condition-condition-lars-case3.html)
+
+##### DiagnosticReport
+
+- [檢驗報告-案例三](DiagnosticReport-diagnosticreport-lars-case3.html)
+
+##### Observation
+
+- [檢驗檢查-案例三](Observation-observation-lars-case3.html)
+
+##### Specimen
+
+- [檢驗檢體-案例三](Specimen-specimen-lars-case3.html)
+
 #### 個案四
 
 ##### Bundle

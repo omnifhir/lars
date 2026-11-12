@@ -24,6 +24,7 @@ Description: "此每日通報個案基本資料(Patient DailyReport LARS)Profile
 * identifier contains
 	temp 0..1 MS
 * identifier[temp].type.coding.code = #PNT
+* identifier[temp].type.coding.display = "Temporary Living Subject Number"
 * identifier[temp].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[temp] ^short = "已有檢驗結果，但尚未取得證號者，請使用此暫用格式。請依下列規定填入。(1) 本國人「小於」6個月者請填入「AA+民國年月日+當天的流水碼(2碼)」。 (2)本國人「大於」6個月者請填入「BB+民國年月日+當天的流水碼(2碼)」。 (3)外國人請填入「CC+民國年月日+當天的流水碼(2碼)」"
 
