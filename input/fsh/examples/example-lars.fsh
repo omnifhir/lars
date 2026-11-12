@@ -401,7 +401,7 @@ Usage: #example
 * referenceRange.text = "無參考值"
 * note.text = "無備註"
 * specimen = Reference(specimen-lars-example)
-* component[LARSnhipayment].code.coding[TWLaboratoryCategory] = $NHIPayment#06013C
+* component[LARSnhipayment].code.coding[0] = $NHIPayment#06013C
 
 
 Instance: observation-lars-daily-report-example
