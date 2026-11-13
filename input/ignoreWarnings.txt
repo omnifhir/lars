@@ -32,21 +32,9 @@
 %The value set include has too many concepts to validate%
 
 # Observatio中的performer、subject、effective[x]為選填，此警告訊息不影響實作與實際代碼驗證。
-WARNING: Bundle/bundle-lars-case1: Bundle.entry[6].resource/*Observation/observation-lars-case1-loinc*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/bundle-lars-case2: Bundle.entry[6].resource/*Observation/observation-lars-case2*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/bundle-lars-case3: Bundle.entry[6].resource/*Observation/observation-lars-case3*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/bundle-lars-daily-report-example: Bundle.entry[10].resource/*Observation/observation-lars-daily-report-loinc-example*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/bundle-lars-monthly-report-case1: Bundle.entry[1].resource/*Observation/observation-lars-monthly-report-case1*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Bundle/bundle-lars-monthly-report-case2: Bundle.entry[1].resource/*Observation/observation-lars-monthly-report-case2*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-case1-loinc: Observation: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-case2: Observation: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-case3: Observation: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-daily-report-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-daily-report-loinc-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-monthly-report-case1: Observation: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Observation/observation-lars-monthly-report-case2: Observation: Best Practice Recommendation: In general, all observations should have a performer
-
-
+% Best Practice Recommendation: In general, all observations should have a performer%
+% Best Practice Recommendation: In general, all observations should have a subject%
+% Best Practice Recommendation: In general, all observations should have a effective[x]%
 
 # 術語伺服器未提供 zh-TW 名稱，但已確認以下 display 為有效的預設語言名稱。
 There are no valid display names found for the code http://loinc.org#11502-2 for language(s) 'zh-TW'. The display is 'Laboratory report' which is a valid display for the default language%
