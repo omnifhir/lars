@@ -6,13 +6,13 @@ Alias: $NHIPayment = https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-ser
 
 Instance: organization-lars-case1
 InstanceOf: OrganizationLARS
-Title: "醫事機構-0131060029"
+Title: "醫事機構-衛生福利部臺北醫院"
 Description: "依據醫事機構(Organization LARS)Profile 呈現案例一之通報醫事機構資料。"
 Usage: #example
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
 	<h3>
-		<b>醫事機構-0131060029</b>
+		<b>醫事機構-衛生福利部臺北醫院</b>
 	</h3>
 	<p>
 		<b>識別碼型別</b>：Provider number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PRN) </span>
@@ -40,14 +40,10 @@ Usage: #example
 	</h3>
 	<p>
 		<b>識別碼型別</b>：National Person Identifier <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#NNxxx) </span>
-	</p>
-	<p>
 		<b>身分證號</b>：A126555555(http://www.moi.gov.tw)
 	</p>
 	<p>
 		<b>識別碼型別</b>：Medical record number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#MR) </span>
-	</p>
-	<p>
 		<b>病歷號</b>：12345679
 	</p>
 	<p>
@@ -166,13 +162,13 @@ Usage: #example
 		<b>個案資料</b>：<a href=\"Patient-patient-lars-case1.html\">Patient/patient-lars-case1</a> \"範例一\"
 	</p>
 	<p>
-		<b>檢體種類</b>：T999（待補資料）
+		<b>檢體種類</b>：To be specified in another part of the message(T999)
 	</p>
 	<p>
 		<b>收件日期</b>：2026-11-03 11:30:00+0800
 	</p>
 </div>"
-// 來源未提供 SAMPLE_TYPE，依檢體種類規範以 T999 表示待補資料
+
 * type = LARSSpecimenTypeCS#T999 "To be specified in another part of the message"
 * subject = Reference(patient-lars-case1)
 * receivedTime = "2026-11-03T11:30:00+08:00"
@@ -268,11 +264,12 @@ Usage: #example
 		<b>檢體資料</b>：<a href=\"Specimen-specimen-lars-case1.html\">Specimen/specimen-lars-case1</a> \"檢驗檢體-案例一\"
 	</p>
 	<p>
-		<b>健保檢驗項目</b>：13007C <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-service-payment-tw\">全民健康保險醫療服務給付項目</a>#13007C) </span>
+		<b>健保檢驗項目</b>：細菌培養鑑定檢查(包括一般細菌、真菌、原蟲等為對象的培養鑑定，抗酸菌除外) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-service-payment-tw\">全民健康保險醫療服務給付項目</a>#13007C) </span>
 	</p>
 </div>"
 * identifier.value = "EE2200120001"
 * status = #final
+* category[twcore] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code.coding[LOINCObservationCode] = $LOINC#595-9 "Bacteria identified in Abscess by Aerobe culture"
 * subject = Reference(patient-lars-case1)
 * effectiveDateTime = "2026-11-03T15:00:00+08:00"
@@ -280,10 +277,10 @@ Usage: #example
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"
 * referenceRange.text = "ABCDEFG"
 * note[0].text = "##01"
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] = $NHIPayment#13007C "細菌培養鑑定檢查(包括一般細菌、真菌、原蟲等為對象的培養鑑定，抗酸菌除外)"
 // 抗藥性檢測結果(INSPECTION_RESULT_1)使用專用 component
 * component[DrugResistanceResult].valueString = "Ampicillin-sulbactam:R/>=32;Amikacin:S/<=2;Cefixime:S/0.5;Ciprofloxacin:S/<=0.25;Colistin:I/<=0.5;Ceftriaxone:S/<=1;Cefazolin:S/<=4;Ertapenem:S/<=0.5;Cefepime:S/<=1;Cefoxitin:I/16;Gentamicin:S/<=1;Imipenem:S/<=0.25;Minocycline:R/>=16;Tigecycline:R/2;Piperacillin-tazobactam:S/<=4;Ampicillin:S/<=0.25;Clindamycin:S/<=0.25;Ceftriaxone:S/<=0.12;Erythromycin:S/<=0.12;Levofloxacin:S/<=0.25;Linezolid:S/<=2;Moxifloxacin:S/0.12;Penicillin-G:S/<=0.06;Cefotaxime:S/<=0.12;Tetracycline:R/>=16;Tigecycline:S/<=0.06;Teicoplanin:S/<=0.12;Vancomycin:S/<=0.12;"
 * specimen = Reference(specimen-lars-case1)
-* component[LARSnhipayment].code.coding[0] = $NHIPayment#13007C "細菌培養鑑定檢查(包括一般細菌、真菌、原蟲等為對象的培養鑑定，抗酸菌除外)"
 
 Instance: messageheader-lars-case1
 InstanceOf: MessageHeaderDailyReport

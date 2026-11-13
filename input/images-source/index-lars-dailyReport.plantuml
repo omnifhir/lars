@@ -1,0 +1,28 @@
+@startuml
+autonumber
+
+skinparam sequence {
+ArrowColor gray
+ActorBorderColor gray
+LifeLineBorderColor black
+}
+skinparam shadowing false
+hide footbox
+
+participant "  醫療院所  " as HOSP #d1ebf1
+participant "  疾管署\n實驗室傳染病自動通報系統  " as LARS #cadaa9
+
+group 每日個案資料
+    HOSP -> LARS: 上傳實驗室傳染病每日通報個案資料\n(格式：Bundle DailyReport LARS)
+    |||
+    alt 情況1：200 OK
+        LARS -> HOSP: 回覆上傳每日通報個案資料成功訊息\n(HTTP 200 OK)
+    else 情況2：400 Bad Request
+        LARS -> HOSP: 回覆上傳每日通報個案資料失敗訊息\n(HTTP 400 Bad Request；格式：OperationOutcome)
+        |||
+        HOSP -> HOSP: 異常資料修正
+    end
+end
+
+@enduml
+

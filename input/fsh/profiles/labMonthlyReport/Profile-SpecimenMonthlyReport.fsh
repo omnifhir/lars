@@ -1,5 +1,5 @@
 Profile:  SpecimenMonthlyReport
-Parent:   TWCoreSpecimen
+Parent:   Specimen
 Id:       specimen-lars-monthly-report
 Title:    "每日總收件數檢驗檢體(Specimen MonthlyReport LARS)"
 Description: "此每日總收件數檢驗檢體(Specimen MonthlyReport LARS)Profile說明本IG如何進一步定義臺灣核心-檢體（TW Core Specimen）Profile，以呈現檢驗報告之檢體資料"

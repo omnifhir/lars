@@ -3,7 +3,7 @@
 # 尚未指定 OID（CodeSystem / ValueSet），不影響驗證。
 % have an OID%
 
-# Validator 無法解析外部 Canonical URL，不影響驗證。（目前 0 uses，若之後仍無符合訊息可移除）
+# Validator 無法解析外部 Canonical URL，不影響驗證。
 % Canonical URL%
 % URL value%
 
@@ -16,8 +16,7 @@
 # 提醒 slice 的 discriminator type 'pattern' 寫法於 R5 已棄用，本 IG 為 R4，不影響本IG驗證。
 % The discriminator type 'pattern' is deprecated in R5%
 
-# 「多型擇一」設計：容器上限 1 為刻意限制，底下沿用父 profile 的多個 slice 僅供擇一，不影響本IG驗證。
-# 適用：Patient.identifier（身分證／護照／居留證等）、Observation.code.coding（月報僅允許健保批價碼）。
+# 提醒slice雖有多筆，但實際只能填一筆，不影響驗證
 % but the slices add up to a maximum of %
 
 # 繼承自 TW Core 的 profile 的 R5 擴充（elementdefinition-maxValueSet、regex）已被標示為 deprecated，非本 IG 會使用到之定義，不影響本IG驗證。
@@ -32,11 +31,24 @@
 # LOINC 值集代碼數量（約 7.4 萬筆）超過 Validator 單次檢查上限，未逐筆檢查代碼，不影響驗證。
 %The value set include has too many concepts to validate%
 
-# Observation 未提供 performer：依本 IG 決策忽略此最佳實務建議。
-%Best Practice Recommendation: In general, all observations should have a performer%
+# Observatio中的performer、subject、effective[x]為選填，此警告訊息不影響實作與實際代碼驗證。
+WARNING: Bundle/bundle-lars-case1: Bundle.entry[6].resource/*Observation/observation-lars-case1-loinc*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Bundle/bundle-lars-case2: Bundle.entry[6].resource/*Observation/observation-lars-case2*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Bundle/bundle-lars-case3: Bundle.entry[6].resource/*Observation/observation-lars-case3*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Bundle/bundle-lars-daily-report-example: Bundle.entry[10].resource/*Observation/observation-lars-daily-report-loinc-example*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Bundle/bundle-lars-monthly-report-case1: Bundle.entry[1].resource/*Observation/observation-lars-monthly-report-case1*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Bundle/bundle-lars-monthly-report-case2: Bundle.entry[1].resource/*Observation/observation-lars-monthly-report-case2*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-case1-loinc: Observation: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-case2: Observation: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-case3: Observation: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-daily-report-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-daily-report-loinc-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-monthly-report-case1: Observation: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Observation/observation-lars-monthly-report-case2: Observation: Best Practice Recommendation: In general, all observations should have a performer
 
-# 術語伺服器未提供 zh-TW 名稱，但已確認以下 display 為有效的預設語言名稱，保留官方英文。
-# 僅忽略下列代碼與 display 的翻譯缺漏提示；其他 display 錯誤仍須驗證。
+
+
+# 術語伺服器未提供 zh-TW 名稱，但已確認以下 display 為有效的預設語言名稱。
 There are no valid display names found for the code http://loinc.org#11502-2 for language(s) 'zh-TW'. The display is 'Laboratory report' which is a valid display for the default language%
 There are no valid display names found for the code http://loinc.org#595-9 for language(s) 'zh-TW'. The display is 'Bacteria identified in Abscess by Aerobe culture' which is a valid display for the default language%
 There are no valid display names found for the code http://loinc.org#600-7 for language(s) 'zh-TW'. The display is 'Bacteria identified in Blood by Culture' which is a valid display for the default language%
@@ -45,3 +57,6 @@ There are no valid display names found for the code http://terminology.hl7.org/C
 There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ActCode#NONAC for language(s) 'zh-TW'. The display is 'inpatient non-acute' which is a valid display for the default language%
 There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#NEG for language(s) 'zh-TW'. The display is 'Negative' which is a valid display for the default language%
 There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS for language(s) 'zh-TW'. The display is 'Positive' which is a valid display for the default language%
+
+# 值集展開內容過大，頁面僅顯示部分代碼的資訊提示。
+%The value set expansion is too large, and only a subset has been displayed%

@@ -1,5 +1,5 @@
 Profile: ObservationDailyReportLOINC
-Parent: TWCoreObservationLaboratoryResult
+Parent: TWCoreObservationClinicalResult
 Id: observation-lars-daily-report-loinc
 Title: "每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyReport LARS (LOINC))"
 Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyReport LARS (LOINC))Profile 說明本 IG 如何進一步定義臺灣核心-實驗室檢驗檢查（TW Core Observation Laboratory Result）Profile，以呈現實驗室傳染病每日通報個案之檢驗檢查資料，並以 LOINC 編碼識別檢驗檢查項目。"
@@ -10,9 +10,15 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 * status = #final
 * status ^short = "【此欄位為FHIR必填欄位】" 
 
-* code.coding[TWLaboratoryCategory] 0..0
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains
+    LOINCObservationCode 1..1 MS
 * code.coding[LOINCObservationCode] ^short = "LOINC Code"
-* code.coding[LOINCObservationCode] 1..
+* code.coding[LOINCObservationCode] from https://twcore.mohw.gov.tw/ig/twcore/ValueSet/loinc-observation-code (required)
+* code.coding[LOINCObservationCode].system = "http://loinc.org"
+* code.coding[LOINCObservationCode].code 1..1
 
 
 * subject only Reference(PatientDailyReport)
@@ -53,7 +59,6 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #closed
 * component contains
-
     LARSnhipayment 1..1 MS and
     DrugResistanceResult 0..1 MS
 
@@ -62,7 +67,16 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 * component[LARSnhipayment].code.coding 1..1
 * component[LARSnhipayment].code.coding.system 1..1
 * component[LARSnhipayment].code.coding.code 1..1
-* component[LARSnhipayment].code.coding contains LARSNoNHICode 0..1 MS
+* component[LARSnhipayment].code.coding ^slicing.discriminator.type = #pattern
+* component[LARSnhipayment].code.coding ^slicing.discriminator.path = "system"
+* component[LARSnhipayment].code.coding ^slicing.rules = #closed
+* component[LARSnhipayment].code.coding contains
+    TWLaboratoryCategory 0..1 MS and
+    LARSNoNHICode 0..1 MS
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] from https://twcore.mohw.gov.tw/ig/twcore/ValueSet/laboratory-category-tw (required)
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] ^short = "健保批價碼"
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory].system = "https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-service-payment-tw"
+* component[LARSnhipayment].code.coding[LARSNoNHICode] from LARSNHICodeVS (required)
 * component[LARSnhipayment].code.coding[LARSNoNHICode] ^short = "無健保批價碼或自費"
 * component[LARSnhipayment].code.coding[LARSNoNHICode].system = "https://cdc.gov.tw/lars/CodeSystem/lars-code-values"
 
@@ -70,7 +84,4 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 * component[DrugResistanceResult].code = LARSFHIRNeedCodeCS#抗藥性檢測結果 "抗藥性檢測結果"
 * component[DrugResistanceResult].value[x] 1..1 MS
 * component[DrugResistanceResult].value[x] only string
-* component[DrugResistanceResult].valueString 1..1 MS
 * component[DrugResistanceResult].valueString ^short = "抗藥性的檢測結果值"
-* component[DrugResistanceResult].code.coding[LOINCObservationCode] 0..0
-* component[DrugResistanceResult].code.coding[TWLaboratoryCategory] 0..0

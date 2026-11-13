@@ -128,7 +128,7 @@
 
 ##### Organization
 
-- [醫事機構-台灣基督長老教會馬偕醫療財團法人馬偕紀念醫院](Organization-organization-lars-example.html)
+- [醫事機構-案例四](Organization-organization-lars-example.html)
 
 ##### Patient
 
@@ -136,7 +136,7 @@
 
 ##### Encounter
 
-- [每日通報個案就醫資料-門診](Encounter-encounter-lars-daily-report-example.html)
+- [每日通報個案就醫資料-案例四](Encounter-encounter-lars-daily-report-example.html)
 
 ##### Condition
 
@@ -161,3 +161,21 @@
 
 
 
+
+### 每日總收件數（LabMonthlyReport）
+
+#### 每日總收件數範例一
+
+- [Bundle－範例一](Bundle-bundle-lars-monthly-report-case1.html)
+- [MessageHeader－範例一](MessageHeader-messageheader-lars-monthly-report-case1.html)
+- [Observation－範例一](Observation-observation-lars-monthly-report-case1.html)
+- [Specimen－範例一](Specimen-specimen-lars-monthly-report-case1.html)
+- [Organization－範例一](Organization-organization-lars-monthly-report-case1.html)
+
+#### 每日總收件數範例二
+
+- [Bundle－範例二](Bundle-bundle-lars-monthly-report-case2.html)
+- [MessageHeader－範例二](MessageHeader-messageheader-lars-monthly-report-case2.html)
+- [Observation－範例二](Observation-observation-lars-monthly-report-case2.html)
+- [Specimen－範例二](Specimen-specimen-lars-monthly-report-case2.html)
+- [Organization－範例二](Organization-organization-lars-monthly-report-case2.html)

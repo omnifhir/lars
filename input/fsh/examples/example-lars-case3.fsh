@@ -6,13 +6,13 @@ Alias: $NHIPayment = https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-ser
 
 Instance: organization-lars-case3
 InstanceOf: OrganizationLARS
-Title: "醫事機構-1101010021"
+Title: "醫事機構-基督復臨安息日會醫療財團法人臺安醫院"
 Description: "依據醫事機構(Organization LARS)Profile 呈現案例三之通報醫事機構資料。"
 Usage: #example
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
 	<h3>
-		<b>醫事機構-1101010021</b>
+		<b>醫事機構-基督復臨安息日會醫療財團法人臺安醫院</b>
 	</h3>
 	<p>
 		<b>識別碼型別</b>：Provider number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PRN) </span>
@@ -38,40 +38,42 @@ Usage: #example
 	<h3>
 		<b>個案資料-範例三</b>
 	</h3>
+
 	<p>
-		<b>識別碼型別</b>：暫時證號 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PNT) </span>
-	</p>
-	<p>
-		<b>暫時證號(外國人)</b>：CC71123101(https://cdc.gov.tw/lars/source/1101010021/identifier/temp)
+		<b>識別碼型別</b>：Temporary Living Subject Number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PNT) </span>
+		<b>暫時證號(外國人)</b>：CC71123101(http://terminology.hl7.org/CodeSystem/v2-0203)
 	</p>
 	<p>
 		<b>識別碼型別</b>：Medical record number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#MR) </span>
-	</p>
-	<p>
-		<b>病歷號</b>：12345678
+		<b>病歷號</b>：12345678	
 	</p>
 	<p>
 		<b>姓名(usual)</b>：範例三
 	</p>
 	<p>
-		<b>性別</b>：其他
+		<b>性別</b>：其他(other)
 	</p>
 	<p>
 		<b>出生年</b>：1982
 	</p>
 	<p>
-		<b>電話</b>：未知（來源未提供）
+		<b>行動電話</b>：0912345678
 	</p>
 	<p>
-		<b>居住地（3碼郵遞區號）</b>：104（臺北市中山區）
+		<b>公司電話</b>：0223456789
+	</p>
+	<p>
+		<b>住家電話</b>：0223456789
+	</p>
+	<p>
+		<b>居住地（郵遞區號）</b>：104(中山區)
 	</p>
 </div>"
-// IDNO 為暫時證號(外國人)，待取得正式證號後更新
-* identifier[temp].use = #temp
-* identifier[temp].type.coding.system = $v2-0203
+
 * identifier[temp].type.coding.code = #PNT
 * identifier[temp].type.coding.display = "Temporary Living Subject Number"
-* identifier[temp].system = "https://cdc.gov.tw/lars/source/1101010021/identifier/temp"
+* identifier[temp].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* identifier[temp].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[temp].value = "CC71123101"
 * identifier[medicalRecord].use = #official
 * identifier[medicalRecord].type.coding.system = $v2-0203
@@ -83,10 +85,10 @@ Usage: #example
 * name[usual].text = "範例三"
 * gender = #other
 * birthDate = "1982"
-// 來源未提供電話，以 data-absent-reason 表示未知，不填入虛構號碼。
-* telecom[mobile].system = #phone
-* telecom[mobile].value.extension[0].url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* telecom[mobile].value.extension[0].valueCode = #unknown
+* telecom[mobile].value = "0912345678"
+* telecom[work].system = #phone
+* telecom[work].use = #work
+* telecom[work].value = "0227223456"
 * address.city = "104"
 
 Instance: encounter-lars-case3
@@ -277,7 +279,7 @@ Usage: #example
 		<b>檢體資料</b>：<a href=\"Specimen-specimen-lars-case3.html\">Specimen/specimen-lars-case3</a> \"檢驗檢體-案例三\"
 	</p>
 	<p>
-		<b>健保檢驗項目</b>：14065C <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-service-payment-tw\">全民健康保險醫療服務給付項目</a>#14065C) </span>
+		<b>健保檢驗項目</b>：流行性感冒A型病毒抗原<span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-service-payment-tw\">全民健康保險醫療服務給付項目</a>#14065C) </span>
 	</p>
 </div>"
 * extension[loinc].extension[loincComponent].valueCoding = LARSLOINCComponentCS#Influv004 "Influenza virus A Ag"
@@ -286,6 +288,7 @@ Usage: #example
 * extension[loinc].extension[loincScale].valueCoding = LARSLOINCScaleCS#S02 "Ord"
 * identifier.value = "EE2200120003"
 * status = #final
+* category[twcore] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code.coding[LARSLOINCObservationCode] = LARSCodeCS#99999 "無LOINC code可對應使用"
 * subject = Reference(patient-lars-case3)
 * effectiveDateTime = "2026-11-03T15:00:00+08:00"
@@ -295,7 +298,7 @@ Usage: #example
 * referenceRange.text = "無參考值"
 * note[0].text = "無備註"
 * specimen = Reference(specimen-lars-case3)
-* component[LARSnhipayment].code.coding[0] = $NHIPayment#14065C "流行性感冒A型病毒抗原"
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] = $NHIPayment#14065C "流行性感冒A型病毒抗原"
 
 Instance: messageheader-lars-case3
 InstanceOf: MessageHeaderDailyReport

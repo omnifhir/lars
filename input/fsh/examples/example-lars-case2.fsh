@@ -6,19 +6,19 @@ Alias: $NHIPayment = https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-ser
 
 Instance: organization-lars-case2
 InstanceOf: OrganizationLARS
-Title: "醫事機構-1101010012"
+Title: "醫事機構-佛教慈濟醫療財團法人台北慈濟醫院"
 Description: "依據醫事機構(Organization LARS)Profile 呈現案例二之通報醫事機構資料。"
 Usage: #example
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
 	<h3>
-		<b>醫事機構-1101010012</b>
+		<b>醫事機構-佛教慈濟醫療財團法人台北慈濟醫院</b>
 	</h3>
 	<p>
 		<b>識別碼型別</b>：Provider number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PRN) </span>
 	</p>
 	<p>
-		<b>醫事機構代碼</b>：1101010012(https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/organization-identifier-tw)
+		<b>醫事機構代碼</b>：1131050515(https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/organization-identifier-tw)
 	</p>
 </div>"
 * identifier.use = #official
@@ -26,7 +26,7 @@ Usage: #example
 * identifier.type.coding.code = #PRN
 * identifier.type.coding.display = "Provider number"
 * identifier.system = "https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/organization-identifier-tw"
-* identifier.value = "1101010012"
+* identifier.value = "1131050515"
 
 Instance: patient-lars-case2
 InstanceOf: PatientDailyReport
@@ -39,15 +39,11 @@ Usage: #example
 		<b>個案資料-範例二</b>
 	</h3>
 	<p>
-		<b>識別碼型別</b>：暫時證號 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PNT) </span>
-	</p>
-	<p>
-		<b>暫時證號(本國人大於6個月)</b>：BB115042801(https://cdc.gov.tw/lars/source/1101010012/identifier/temp)
+		<b>識別碼型別</b>：Temporary Living Subject Number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#PNT) </span>
+		<b>暫時證號(本國人大於6個月)</b>：BB115042801(http://terminology.hl7.org/CodeSystem/v2-0203)
 	</p>
 	<p>
 		<b>識別碼型別</b>：Medical record number <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"http://terminology.hl7.org/CodeSystem/v2-0203\">IdentifierType</a>#MR) </span>
-	</p>
-	<p>
 		<b>病歷號</b>：22345678
 	</p>
 	<p>
@@ -60,19 +56,23 @@ Usage: #example
 		<b>出生年</b>：2026
 	</p>
 	<p>
-		<b>電話</b>：未知（來源未提供）
+		<b>行動電話</b>：0912345678
 	</p>
 	<p>
-		<b>居住地（3碼郵遞區號）</b>：104（臺北市中山區）
+		<b>公司電話</b>：0223456789
+	</p>
+	<p>
+		<b>住家電話</b>：0223456789
+	</p>
+	<p>
+		<b>居住地（郵遞區號）</b>：104(中山區)
 	</p>
 </div>"
-// 原始 BB1150428 缺流水號；此教學範例補示意流水號 01，實際上傳須使用院內核發值。
-// IDNO 為暫時證號(本國人大於6個月)，待取得正式證號後更新
-* identifier[temp].use = #temp
-* identifier[temp].type.coding.system = $v2-0203
+
 * identifier[temp].type.coding.code = #PNT
 * identifier[temp].type.coding.display = "Temporary Living Subject Number"
-* identifier[temp].system = "https://cdc.gov.tw/lars/source/1101010012/identifier/temp"
+* identifier[temp].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* identifier[temp].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[temp].value = "BB115042801"
 * identifier[medicalRecord].use = #official
 * identifier[medicalRecord].type.coding.system = $v2-0203
@@ -84,10 +84,13 @@ Usage: #example
 * name[usual].text = "範例二"
 * gender = #female
 * birthDate = "2026"
-// 來源未提供電話，以 data-absent-reason 表示未知，不填入虛構號碼。
-* telecom[mobile].system = #phone
-* telecom[mobile].value.extension[0].url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* telecom[mobile].value.extension[0].valueCode = #unknown
+* telecom[mobile].value = "0912345678"
+* telecom[work].system = #phone
+* telecom[work].use = #work
+* telecom[work].value = "0223456789"
+* telecom[home].system = #phone
+* telecom[home].use = #home
+* telecom[home].value = "0223456789"
 * address.city = "104"
 
 Instance: encounter-lars-case2
@@ -149,7 +152,6 @@ Usage: #example
 * subject = Reference(patient-lars-case2)
 * encounter = Reference(encounter-lars-case2)
 * evidence.detail = Reference(diagnosticreport-lars-case2)
-// 院內尚未有診斷碼（Excel 填 XXXX），暫以 code.text 表示；待醫師開立診斷碼後更新
 * code.text = "XXXX"
 
 Instance: specimen-lars-case2
@@ -279,7 +281,7 @@ Usage: #example
 		<b>檢體資料</b>：<a href=\"Specimen-specimen-lars-case2.html\">Specimen/specimen-lars-case2</a> \"檢驗檢體-案例二\"
 	</p>
 	<p>
-		<b>無健保批價碼</b>：888888(SARS-CoV-2無健保批價碼或自費) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"CodeSystem-lars-code-values.html\">CDC-LARS系統代碼</a>#888888) </span>
+		<b>無健保批價碼</b>：SARS-CoV-2無健保批價碼或自費 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ( <a href=\"CodeSystem-lars-code-values.html\">CDC-LARS系統代碼</a>#888888) </span>
 	</p>
 </div>"
 * extension[loinc].extension[loincComponent].valueCoding = LARSLOINCComponentCS#Corona028 "SARS-CoV-2 Ag"
@@ -288,6 +290,7 @@ Usage: #example
 * extension[loinc].extension[loincScale].valueCoding = LARSLOINCScaleCS#S02 "Ord"
 * identifier.value = "EE2200120002"
 * status = #final
+* category[twcore] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code.coding[LARSLOINCObservationCode] = LARSCodeCS#99999 "無LOINC code可對應使用"
 * subject = Reference(patient-lars-case2)
 * effectiveDateTime = "2026-11-03T15:00:00+08:00"
@@ -297,7 +300,7 @@ Usage: #example
 * referenceRange.text = "無參考值"
 * note[0].text = "無備註"
 * specimen = Reference(specimen-lars-case2)
-* component[LARSnhipayment].code.coding[0] = LARSCodeCS#888888 "SARS-CoV-2無健保批價碼或自費"
+* component[LARSnhipayment].code.coding[LARSNoNHICode] = LARSCodeCS#888888 "SARS-CoV-2無健保批價碼或自費"
 
 Instance: messageheader-lars-case2
 InstanceOf: MessageHeaderDailyReport

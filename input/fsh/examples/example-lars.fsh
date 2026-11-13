@@ -396,6 +396,7 @@ Usage: #example
 </div>"
 * identifier.value = "123456789"
 * status = #final
+* category[twcore] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code.coding[LOINCObservationCode] = $LOINC#600-7 "Bacteria identified in Blood by Culture"
 * subject = Reference(patient-lars-example)
 * effectiveDateTime = "2018-01-23T15:15:00+08:00"
@@ -404,7 +405,7 @@ Usage: #example
 * referenceRange.text = "無參考值"
 * note.text = "無備註"
 * specimen = Reference(specimen-lars-example)
-* component[LARSnhipayment].code.coding[0] = $NHIPayment#06013C "尿生化檢查(包括蛋白、糖、尿膽元、膽紅素、比重、顏色、混濁度、酸鹼度、白血球酯脢及酮體)"
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] = $NHIPayment#06013C "尿生化檢查(包括蛋白、糖、尿膽元、膽紅素、比重、顏色、混濁度、酸鹼度、白血球酯脢及酮體)"
 
 
 Instance: observation-lars-daily-report-example
@@ -475,6 +476,7 @@ Usage: #example
 * extension[loinc].extension[loincScale].valueCoding = LARSLOINCScaleCS#S01 "Qn"
 * identifier.value = "123456790"
 * status = #final
+* category[twcore] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code.coding[LARSLOINCObservationCode] = LARSCodeCS#99999 "無LOINC code可對應使用"
 * subject = Reference(patient-lars-example)
 * effectiveDateTime = "2018-01-23T15:15:00+08:00"
@@ -485,7 +487,7 @@ Usage: #example
 * referenceRange.text = "<1:80"
 * note.text = "##01"
 * specimen = Reference(specimen-lars-example)
-* component[LARSnhipayment].code.coding[0] = LARSCodeCS#999999 "除SARS-CoV-2之其他病原體無健保批價碼或自費"
+* component[LARSnhipayment].code.coding[LARSNoNHICode] = LARSCodeCS#999999 "除SARS-CoV-2之其他病原體無健保批價碼或自費"
 
 Instance: messageheader-lars-daily-report-example
 InstanceOf: MessageHeaderDailyReport
@@ -507,13 +509,24 @@ Usage: #example
 		<b>訊息來源端點</b>：https://cdc.gov.tw/lars/source/1101100011
 	</p>
 	<p>
-		<b>訊息焦點</b>：<a href=\"Condition-condition-lars-daily-report-example-1.html\">Condition/condition-lars-daily-report-example-1</a> \"沙門桿菌腸炎\"
+		<b>訊息焦點</b>：
 	</p>
+	<ul>
+		<li><a href=\"Condition-condition-lars-daily-report-example-1.html\">Condition/condition-lars-daily-report-example-1</a> \"沙門桿菌腸炎\"</li>
+		<li><a href=\"Condition-condition-lars-daily-report-example-2.html\">Condition/condition-lars-daily-report-example-2</a> \"沙門桿菌敗血症\"</li>
+		<li><a href=\"Condition-condition-lars-daily-report-example-3.html\">Condition/condition-lars-daily-report-example-3</a> \"局部沙門桿菌感染\"</li>
+		<li><a href=\"Condition-condition-lars-daily-report-example-4.html\">Condition/condition-lars-daily-report-example-4</a> \"其他特定之沙門桿菌感染\"</li>
+		<li><a href=\"Condition-condition-lars-daily-report-example-5.html\">Condition/condition-lars-daily-report-example-5</a> \"沙門桿菌感染\"</li>
+	</ul>
 </div>"
 * eventCoding = http://loinc.org#11502-2 "Laboratory report"
 * sender = Reference(organization-lars-example)
 * source.endpoint = "https://cdc.gov.tw/lars/source/1101100011"
-* focus = Reference(condition-lars-daily-report-example-1)
+* focus[0] = Reference(condition-lars-daily-report-example-1)
+* focus[1] = Reference(condition-lars-daily-report-example-2)
+* focus[2] = Reference(condition-lars-daily-report-example-3)
+* focus[3] = Reference(condition-lars-daily-report-example-4)
+* focus[4] = Reference(condition-lars-daily-report-example-5)
 
 Instance: bundle-lars-daily-report-example
 InstanceOf: BundleDailyReport

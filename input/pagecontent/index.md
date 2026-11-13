@@ -18,6 +18,30 @@
 
 
 
+#### 循序圖
+
+##### 一、實驗室傳染病每日通報個案上傳－DailyReport
+
+1. 醫療院所上傳實驗室傳染病每日通報個案資料至LARS系統（格式：[實驗室傳染病每日通報個案上傳（Bundle DailyReport LARS）](StructureDefinition-bundle-lars-daily-report.html)）。
+2. LARS系統檢核資料正確性，處理成功時回覆每日通報個案資料上傳成功訊息（HTTP 200 OK）。
+3. LARS系統檢核資料正確性，處理失敗時回覆每日通報個案資料上傳失敗訊息（HTTP 400 Bad Request；格式：OperationOutcome）。
+4. 醫療院所可依照LARS系統回覆訊息修正異常資料。
+
+<div style="justify-content: center;display: flex;width: 100%;">{% include index-lars-dailyReport.svg %}</div>
+
+<br>
+
+##### 二、實驗室傳染病每日總收件數上傳－MonthlyReport
+
+1. 醫療院所上傳實驗室傳染病每日總收件數資料至LARS系統（格式：[實驗室傳染病每日總收件數上傳（Bundle MonthlyReport LARS）](StructureDefinition-bundle-lars-monthly-report.html)）。
+2. LARS系統檢核資料正確性，處理成功時回覆每日總收件數資料上傳成功訊息（HTTP 200 OK）。
+3. LARS系統檢核資料正確性，處理失敗時回覆每日總收件數資料上傳失敗訊息（HTTP 400 Bad Request；格式：OperationOutcome）。
+4. 醫療院所可依照LARS系統回覆訊息修正異常資料。
+
+<div style="justify-content: center;display: flex;width: 100%;">{% include index-lars-monthlyReport.svg %}</div>
+
+<br>
+
 ### 如何閱讀這個實作指引(IG)
 <div  style="padding-left: 10px;"> 
 <p>本IG之網站架構圖如下圖所示。各功能說明如下：</p>

@@ -1,5 +1,5 @@
 Profile: DiagnosticReportDailyReport
-Parent: TWCoreDiagnosticReport
+Parent: DiagnosticReport
 Id: diagnosticreport-lars-daily-report
 Title: "每日通報個案檢驗報告(DiagnosticReport DailyReport LARS)"
 Description: "此每日通報個案檢驗報告(DiagnosticReport DailyReport LARS)Profile說明本IG如何進一步定義臺灣核心-診斷報告(TW Core DiagnosticReport) Profile，以呈現實驗室傳染病每日通報個案之檢驗報告。"

@@ -1,5 +1,5 @@
 Profile: ObservationDailyReport
-Parent: TWCoreObservationLaboratoryResult
+Parent: TWCoreObservationClinicalResult
 Id: observation-lars-daily-report
 Title: "每日通報個案檢驗檢查Code=99999(Observation DailyReport LARS)"
 Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyReport LARS)Profile說明本IG如何進一步定義臺灣核心-實驗室檢驗檢查(TW Core Observation Laboratory Result) Profile，以呈現實驗室傳染病每日通報個案之檢驗檢查資料。"
@@ -10,10 +10,10 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 * status = #final
 * status ^short = "【此欄位為FHIR必填欄位】" 
 
-* code.coding[TWLaboratoryCategory] 0..0
-* code.coding[LOINCObservationCode] 0..0
-
 * code 1..1 MS
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
 * code.coding contains 
     LARSLOINCObservationCode 1..1 MS
 * code.coding[LARSLOINCObservationCode] ^short = "無適用LOINC Code"
@@ -56,10 +56,7 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 * referenceRange.text ^short = "檢驗參考值，文字描述。"
 
 * note MS 
-* note ^short = "備註，1. ALT 結果：若 INSPECTION_ITEM 為 A、B、C 肝，且「相同檢體收件日」有檢驗 ALT 時，須同時上傳 ALT 結果，格式為「ALT=數值+單位」，例如：`ALT=10U/L`。
-2. 院區判斷碼：當申請醫院為多院區時，須註明院區判斷碼，格式為 `##` 開頭加 2 位數字，例如：`##01` 為 A 院區、`##02` 為 B 院區，以此類推，並須提供院區對應表。
-3. 分隔方式：多筆備註資訊請以分號「;」區隔，例如：`ALT=10U/L;##01`。"
-
+* note ^short = "備註，1. ALT 結果：若 INSPECTION_ITEM 為 A、B、C 肝，且「相同檢體收件日」有檢驗 ALT 時，須同時上傳 ALT 結果，格式為「ALT=數值+單位」，例如：`ALT=10U/L`。2. 院區判斷碼：當申請醫院為多院區時，須註明院區判斷碼，格式為 `##` 開頭加 2 位數字，例如：`##01` 為 A 院區、`##02` 為 B 院區，以此類推，並須提供院區對應表。3. 分隔方式：多筆備註資訊請以分號「;」區隔，例如：`ALT=10U/L;##01`。"
 * note ^comment = """
 備註填寫規則：
 
@@ -71,6 +68,10 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 * specimen ^short = "LOINC檢體種類，即LOINC System；若無法填寫請填入 T999:XXX (To be specified in another part of the message)。"
 * specimen only Reference(SpecimenDailyReport)
 
+* extension contains LOINCInfo named loinc 1..1 MS
+* extension[loinc] ^short = "LOINC代碼及檢驗時間、測量單位與檢驗單位屬性"
+
+
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -81,24 +82,24 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 
 * component[LARSnhipayment] ^short = "健保批價碼或無健保批價碼"
 * component[LARSnhipayment].code from LARSNHICodeVS (required)
-* component[LARSnhipayment].code.coding contains LARSNoNHICode 0..1 MS
+* component[LARSnhipayment].code.coding 1..1
+* component[LARSnhipayment].code.coding.system 1..1
+* component[LARSnhipayment].code.coding.code 1..1
+* component[LARSnhipayment].code.coding ^slicing.discriminator.type = #pattern
+* component[LARSnhipayment].code.coding ^slicing.discriminator.path = "system"
+* component[LARSnhipayment].code.coding ^slicing.rules = #closed
+* component[LARSnhipayment].code.coding contains
+    TWLaboratoryCategory 0..1 MS and
+    LARSNoNHICode 0..1 MS
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] from https://twcore.mohw.gov.tw/ig/twcore/ValueSet/laboratory-category-tw (required)
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory] ^short = "健保批價碼"
+* component[LARSnhipayment].code.coding[TWLaboratoryCategory].system = "https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/medical-service-payment-tw"
+* component[LARSnhipayment].code.coding[LARSNoNHICode] from LARSNHICodeVS (required)
 * component[LARSnhipayment].code.coding[LARSNoNHICode] ^short = "無健保批價碼或自費"
 * component[LARSnhipayment].code.coding[LARSNoNHICode].system = "https://cdc.gov.tw/lars/CodeSystem/lars-code-values"
-
 
 * component[DrugResistanceResult] ^short = "抗藥性檢測結果"
 * component[DrugResistanceResult].code = LARSFHIRNeedCodeCS#抗藥性檢測結果 "抗藥性檢測結果"
 * component[DrugResistanceResult].value[x] 1..1 MS
 * component[DrugResistanceResult].value[x] only string
-* component[DrugResistanceResult].valueString 1..1 MS
 * component[DrugResistanceResult].valueString ^short = "抗藥性的檢測結果值"
-* component[DrugResistanceResult].code.coding[LOINCObservationCode] 0..0
-* component[DrugResistanceResult].code.coding[TWLaboratoryCategory] 0..0
-
-
-
-
-
-
-* extension contains LOINCInfo named loinc 1..1 MS
-* extension[loinc] ^short = "LOINC代碼及檢驗時間、測量單位與檢驗單位屬性"

@@ -12,6 +12,6 @@ Description: "此每日通報個案通報訊息(MessageHeader DailyReport LARS)P
 * source 1..1 MS
 * source.endpoint 1..1 MS
 
-* focus 1..1 MS
+* focus 1..5 MS
 * focus only Reference(ConditionDailyReport)
 
