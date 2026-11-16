@@ -43,10 +43,9 @@
       (1) GET [base]/Bundle?message.sender.identifier=0131060029
 
 ##### 檢體收件日期：[Observation.specimen](SearchParameter-Observation-specimen.html) + [Specimen.received-time](SearchParameter-Specimen-received-time.html)
-`GET [base]/Observation?specimen.received-time={gt|lt|ge|le}[date]{&specimen.received-time={gt|lt|ge|le}[date]}`  
+`GET [base]/Observation?specimen.received-time={gt|lt|ge|le}[date]`  
 例子：  
-      (1) GET [base]/Observation?specimen.received-time=2026-11-12  
-      (2) GET [base]/Observation?specimen.received-time=ge2026-11-01&specimen.received-time=lt2026-12-01
+      (1) GET [base]/Observation?specimen.received-time=2026-11-12
 
 ##### 健保批價碼：[Observation.code](SearchParameter-Observation-code.html)
 `GET [base]/Observation?code=[健保批價碼]`  
