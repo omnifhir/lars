@@ -193,7 +193,7 @@ Usage: #definition
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Bundle-identifier.html\">identifier</a></td>
                                     <td><code>token</code></td>
                                     <td>
@@ -202,7 +202,7 @@ Usage: #definition
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Bundle-message.html\">message</a></td>
                                     <td><code>reference</code></td>
                                     <td>
@@ -257,7 +257,7 @@ Usage: #definition
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-MessageHeader-sender.html\">sender</a></td>
                                     <td><code>reference</code></td>
                                     <td>
@@ -311,7 +311,7 @@ Usage: #definition
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Organization-identifier.html\">identifier</a></td>
                                     <td><code>token</code></td>
                                     <td>
@@ -479,7 +479,7 @@ Usage: #definition
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Observation-code.html\">code</a></td>
                                     <td><code>token</code></td>
                                     <td>
@@ -488,7 +488,7 @@ Usage: #definition
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Observation-specimen.html\">specimen</a></td>
                                     <td><code>reference</code></td>
                                     <td>
@@ -543,7 +543,7 @@ Usage: #definition
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Specimen-received-time.html\">received-time</a></td>
                                     <td><code>date</code></td>
                                     <td>
@@ -552,7 +552,7 @@ Usage: #definition
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>必須（SHALL）</b></td>
+                                    <td><b>應該（SHOULD）</b></td>
                                     <td><a href=\"SearchParameter-Specimen-type.html\">type</a></td>
                                     <td><code>token</code></td>
                                     <td>
@@ -594,12 +594,12 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Bundle-identifier"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 * rest.resource[=].searchParam[+].name = "message"
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Bundle-message"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 
 * rest.resource[+].type = #MessageHeader
 * rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/lars/StructureDefinition/messageheader-lars-daily-report"
@@ -623,7 +623,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/MessageHeader-sender"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 
 * rest.resource[+].type = #Organization
 * rest.resource[=].profile = "https://cdc.gov.tw/lars/StructureDefinition/organization-lars"
@@ -646,7 +646,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Organization-identifier"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 
 * rest.resource[+].type = #Patient
 * rest.resource[=].profile = "https://cdc.gov.tw/lars/StructureDefinition/patient-lars-daily-report"
@@ -743,12 +743,12 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Observation-code"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 * rest.resource[=].searchParam[+].name = "specimen"
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Observation-specimen"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 
 * rest.resource[+].type = #Specimen
 * rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/lars/StructureDefinition/specimen-lars-daily-report"
@@ -772,9 +772,9 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Specimen-received-time"
 * rest.resource[=].searchParam[=].type = #date
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].definition = "https://cdc.gov.tw/lars/SearchParameter/Specimen-type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #SHOULD
