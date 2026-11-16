@@ -52,6 +52,8 @@ pages:
     title: 專門術語
   capabilitystatements.md:
     title: 能力聲明
+  searchparameters.md:
+    title: 查詢參數
   downloads.xml:
     title: 結構定義與範例檔下載
   security.md:
