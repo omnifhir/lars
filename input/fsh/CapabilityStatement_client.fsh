@@ -198,7 +198,7 @@ Usage: #definition
                                     <td><code>token</code></td>
                                     <td>
                                         <code>GET [base]/Bundle?identifier=[通報資料流水號]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-bundle-lars-daily-report.html#search\">每日通報個案</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -207,7 +207,7 @@ Usage: #definition
                                     <td><code>reference</code></td>
                                     <td>
                                         <code>GET [base]/Bundle?message.sender.identifier=[醫事機構代碼]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-bundle-lars-daily-report.html#search\">每日通報個案</a>、<a href=\"StructureDefinition-bundle-lars-monthly-report.html#search\">每日總收件數</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -262,7 +262,7 @@ Usage: #definition
                                     <td><code>reference</code></td>
                                     <td>
                                         <code>GET [base]/MessageHeader?sender.identifier=[醫事機構代碼]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-messageheader-lars-daily-report.html#search\">每日通報個案</a>、<a href=\"StructureDefinition-messageheader-lars-monthly-report.html#search\">每日總收件數</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -316,7 +316,7 @@ Usage: #definition
                                     <td><code>token</code></td>
                                     <td>
                                         <code>GET [base]/Organization?identifier={system|}[醫事機構代碼]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-organization-lars.html#search\">醫事機構</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -484,7 +484,7 @@ Usage: #definition
                                     <td><code>token</code></td>
                                     <td>
                                         <code>GET [base]/Observation?code={system|}[健保批價碼]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-observation-lars-monthly-report.html#search\">每日總收件數</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -493,7 +493,7 @@ Usage: #definition
                                     <td><code>reference</code></td>
                                     <td>
                                         <code>GET [base]/Observation?specimen.type=[檢體種類]</code><br/><code>GET [base]/Observation?specimen.received-time={gt|lt|ge|le}[date]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-observation-lars-monthly-report.html#search\">每日總收件數</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -548,7 +548,7 @@ Usage: #definition
                                     <td><code>date</code></td>
                                     <td>
                                         <code>GET [base]/Specimen?received-time={gt|lt|ge|le}[date]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-specimen-lars-monthly-report.html#search\">每日總收件數</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -557,7 +557,7 @@ Usage: #definition
                                     <td><code>token</code></td>
                                     <td>
                                         <code>GET [base]/Specimen?type={system|}[檢體種類]</code><br/>
-                                        <p>實作請參考<a href=\"StructureDefinition-specimen-lars-monthly-report.html#search\">每日總收件數</a></p>
+                                        <p>實作請參考<a href=\"searchparameters.html#以查詢欄位分類\">查詢參數</a></p>
                                     </td>
                                 </tr>
                             </tbody>
