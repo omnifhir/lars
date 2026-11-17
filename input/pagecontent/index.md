@@ -28,8 +28,10 @@
 4. 醫療院所可依照LARS系統回覆訊息修正異常資料。
 
 <!--<div style="justify-content: center;display: flex;width: 100%;">{% include index-lars-dailyReport.svg %}</div>-->
-<img class="figure-img img-responsive img-rounded center-block" src="LabDailyReport_plantuml.png" alt="LabDailyReport" style="display: block;margin-left: auto;margin-right: auto;width: 45%;"/>
 
+<div  style="padding-left: 10px;"> 
+<img class="figure-img img-responsive img-rounded center-block" src="LabDailyReport_plantuml.png" alt="LabDailyReport" style="display: block;margin-left: auto;margin-right: auto;width: 45%;"/>
+</div>
 
 <br>
 
@@ -41,7 +43,10 @@
 4. 醫療院所可依照LARS系統回覆訊息修正異常資料。
 
 <!--<div style="justify-content: center;display: flex;width: 100%;">{% include index-lars-monthlyReport.svg %}</div>-->
+<div  style="padding-left: 10px;"> 
 <img class="figure-img img-responsive img-rounded center-block" src="LabMonthlyReport_plantuml.png" alt="LabMonthlyReport" style="display: block;margin-left: auto;margin-right: auto;width: 45%;"/>
+</div>
+
 <br>
 
 ### 如何閱讀這個實作指引(IG)
