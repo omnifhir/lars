@@ -225,12 +225,13 @@ Title: "Mapping to LARS Observation"
 Source: RlabDailyReportModel
 Target: "https://cdc.gov.tw/lars/StructureDefinition/observation-lars-daily-report"
 * inspectionSno -> "Observation.identifier"
-* inspectionItem -> "Observation.code"
+* loinc -> "Observation.code"
 * nhiCode -> "Observation.component:TWLaboratoryCategory.code"
 * inspectionMethod -> "Observation.method"
 * units -> "Observation.valueQuantity.unit"
 * inspectionReporttime -> "Observation.effectiveDateTime"
 * inspectionResult -> "Observation.valueQuantity.value"
+* inspectionResult -> "Observation.valueString"
 * inspectionResult1 -> "Observation.component.valueString"
 * inspectionRef -> "Observation.referenceRange"
 * interpretationResult -> "Observation.interpretation"
@@ -238,7 +239,7 @@ Target: "https://cdc.gov.tw/lars/StructureDefinition/observation-lars-daily-repo
 * loincTime -> "Observation.extension:loinc"
 * loincMeasure -> "Observation.extension:loinc"
 * loincScale -> "Observation.extension:loinc"
-* loinc -> "Observation.extension:loinc"
+* inspectionItem -> "Observation.extension:loinc"
 * sampleType -> "Observation.specimen"
 
 Mapping: LARSDailyReportSpecimen

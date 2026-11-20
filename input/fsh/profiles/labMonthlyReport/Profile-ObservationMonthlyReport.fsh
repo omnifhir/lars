@@ -2,7 +2,9 @@ Profile: ObservationMonthlyReport
 Parent: Observation
 Id: observation-lars-monthly-report
 Title: "每日總收件數檢驗檢查(Observation MonthlyReport LARS)"
-Description: "此每日總收件數檢驗檢查(Observation MonthlyReport LARS)Profile說明本IG如何進一步定義臺灣核心-實驗室檢驗檢查(TW Core Observation Laboratory Result) Profile，以呈現實驗室傳染病每日總收件數之檢驗檢查資料。"
+Description: "此每日總收件數檢驗檢查(Observation MonthlyReport LARS)Profile說明本IG如何進一步定義FHIR Observation Resource，以呈現實驗室傳染病每日總收件數之檢驗檢查資料。
+
+本Profile未繼承臺灣核心-臨床檢驗檢查(TW Core Observation Clinical Result)或臺灣核心-實驗室檢驗檢查(TW Core Observation Laboratory Result) Profile，係因上述TW Core Profile皆要求subject（病人）及category為必填，臺灣核心-實驗室檢驗檢查另要求effective[x]為必填；而每日總收件數為醫事機構依健保批價碼及檢體種類彙總之檢驗總件數，非屬單一病人之檢驗檢查結果，無法提供subject，故改以FHIR原生Observation Resource為基礎進行定義。"
 * ^version = "0.0.1"
 
 * status = #final

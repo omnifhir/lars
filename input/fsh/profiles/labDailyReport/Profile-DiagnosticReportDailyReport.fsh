@@ -2,7 +2,9 @@ Profile: DiagnosticReportDailyReport
 Parent: DiagnosticReport
 Id: diagnosticreport-lars-daily-report
 Title: "每日通報個案檢驗報告(DiagnosticReport DailyReport LARS)"
-Description: "此每日通報個案檢驗報告(DiagnosticReport DailyReport LARS)Profile說明本IG如何進一步定義臺灣核心-診斷報告(TW Core DiagnosticReport) Profile，以呈現實驗室傳染病每日通報個案之檢驗報告。"
+Description: "此每日通報個案檢驗報告(DiagnosticReport DailyReport LARS)Profile說明本IG如何進一步定義FHIR DiagnosticReport Resource，以呈現實驗室傳染病每日通報個案之檢驗報告。
+
+本Profile未繼承臺灣核心-診斷報告(TW Core DiagnosticReport) Profile，係因TW Core DiagnosticReport之result僅允許參照臺灣核心-實驗室檢驗檢查(TW Core Observation Laboratory Result)，而本IG之每日通報個案檢驗檢查(Observation DailyReport LARS)係繼承臺灣核心-臨床檢驗檢查(TW Core Observation Clinical Result)，若繼承TW Core DiagnosticReport將無法於result參照本IG之檢驗檢查Profile，故改以FHIR原生DiagnosticReport Resource為基礎進行定義。"
 * ^version = "0.0.1"
 
 * status = #final

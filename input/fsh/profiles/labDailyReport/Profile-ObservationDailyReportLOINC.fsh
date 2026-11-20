@@ -2,7 +2,7 @@ Profile: ObservationDailyReportLOINC
 Parent: TWCoreObservationClinicalResult
 Id: observation-lars-daily-report-loinc
 Title: "每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyReport LARS (LOINC))"
-Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyReport LARS (LOINC))Profile 說明本 IG 如何進一步定義臺灣核心-實驗室檢驗檢查（TW Core Observation Laboratory Result）Profile，以呈現實驗室傳染病每日通報個案之檢驗檢查資料，並以 LOINC 編碼識別檢驗檢查項目。"
+Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyReport LARS (LOINC))Profile 說明本 IG 如何進一步定義臺灣核心-臨床檢驗檢查（TW Core Observation Clinical Result）Profile，以呈現實驗室傳染病每日通報個案之檢驗檢查資料，並以 LOINC 編碼識別檢驗檢查項目。"
 * ^version = "0.0.1"
 
 * identifier ^short = "檢驗序號，醫院內部唯一的檢驗代碼。"

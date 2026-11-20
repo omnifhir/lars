@@ -2,7 +2,9 @@ Profile:  SpecimenMonthlyReport
 Parent:   Specimen
 Id:       specimen-lars-monthly-report
 Title:    "每日總收件數檢驗檢體(Specimen MonthlyReport LARS)"
-Description: "此每日總收件數檢驗檢體(Specimen MonthlyReport LARS)Profile說明本IG如何進一步定義臺灣核心-檢體（TW Core Specimen）Profile，以呈現檢驗報告之檢體資料"
+Description: "此每日總收件數檢驗檢體(Specimen MonthlyReport LARS)Profile說明本IG如何進一步定義FHIR Specimen Resource，以呈現每日總收件數之檢體資料。
+
+本Profile未繼承臺灣核心-檢體(TW Core Specimen) Profile，係因TW Core Specimen要求subject（病人）為必填；而每日總收件數之檢體資料係依檢體種類及收件日期彙總，非屬單一病人之檢體，無法提供subject，故改以FHIR原生Specimen Resource為基礎進行定義。"
 * ^version = "0.0.1"
 
 * receivedTime 1..1 MS

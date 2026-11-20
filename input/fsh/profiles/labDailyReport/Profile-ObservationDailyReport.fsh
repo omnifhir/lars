@@ -2,7 +2,7 @@ Profile: ObservationDailyReport
 Parent: TWCoreObservationClinicalResult
 Id: observation-lars-daily-report
 Title: "每日通報個案檢驗檢查Code=99999(Observation DailyReport LARS)"
-Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyReport LARS)Profile說明本IG如何進一步定義臺灣核心-實驗室檢驗檢查(TW Core Observation Laboratory Result) Profile，以呈現實驗室傳染病每日通報個案之檢驗檢查資料。"
+Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyReport LARS)Profile說明本IG如何進一步定義臺灣核心-臨床檢驗檢查(TW Core Observation Clinical Result) Profile，以呈現實驗室傳染病每日通報個案之檢驗檢查資料。"
 * ^version = "0.0.1"
 
 * identifier ^short = "檢驗序號，醫院內部唯一的檢驗代碼。醫院端可自行組合所有相關代碼後上傳。例：檢驗管號+檢驗序號。"
@@ -32,7 +32,7 @@ Description: "此每日通報個案檢驗檢查Code=99999(Observation DailyRepor
 
 
 * effectiveDateTime 1..1 MS
-* effectiveDateTime ^short = "檢驗報告日期時間(發檢驗報告後7日內須將資料上傳)，格式為 YYYYMMDDHHMM。"
+* effectiveDateTime ^short = "檢驗報告日期時間(發檢驗報告後7日內須將資料上傳)，格式為 YYYY-MM-DDThh:mm:ss+zz:zz。"
 
 * value[x] 1..1 MS
 * value[x] only Quantity or string

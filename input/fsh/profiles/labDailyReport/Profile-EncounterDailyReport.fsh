@@ -9,7 +9,7 @@ Description: "此每日通報個案就醫資料(Encounter DailyReport LARS)Profi
 * status ^short = "【此欄位為FHIR必填欄位】" 
 
 * period 1..1
-* period.start ^short = "就醫日期時間，格式為 YYYYMMDDHHMM。" 
+* period.start ^short = "就醫日期時間，格式為YYYY-MM-DDThh:mm:ss+zz:zz。" 
 * period.start 1..1 MS
 
 
