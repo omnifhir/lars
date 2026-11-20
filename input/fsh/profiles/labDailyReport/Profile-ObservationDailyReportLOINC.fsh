@@ -50,7 +50,15 @@ Description: "此每日通報個案檢驗檢查紀錄(LOINC)(Observation DailyRe
 * referenceRange.text ^short = "檢驗參考值，文字描述。"
 
 * note MS 
-* note ^short = "備註"
+* note ^short = "備註，1. ALT 結果：若 INSPECTION_ITEM 為 A、B、C 肝，且「相同檢體收件日」有檢驗 ALT 時，須同時上傳 ALT 結果，格式為「ALT=數值+單位」，例如：`ALT=10U/L`。2. 院區判斷碼：當申請醫院為多院區時，須註明院區判斷碼，格式為 `##` 開頭加 2 位數字，例如：`##01` 為 A 院區、`##02` 為 B 院區，以此類推，並須提供院區對應表。3. 分隔方式：多筆備註資訊請以分號「;」區隔，例如：`ALT=10U/L;##01`。"
+* note ^comment = """
+備註填寫規則：
+
+1. **ALT 結果**：若 INSPECTION_ITEM 為 A、B、C 肝，且「相同檢體收件日」有檢驗 ALT 時，須同時上傳 ALT 結果，格式為「ALT=數值+單位」，例如：`ALT=10U/L`。
+2. **院區判斷碼**：當申請醫院為多院區時，須註明院區判斷碼，格式為 `##` 開頭加 2 位數字，例如：`##01` 為 A 院區、`##02` 為 B 院區，以此類推，並須提供院區對應表。
+3. **分隔方式**：多筆備註資訊請以分號「;」區隔，例如：`ALT=10U/L;##01`。
+"""
+
 
 * specimen ^short = "檢體種類"
 * specimen only Reference(SpecimenDailyReport)
